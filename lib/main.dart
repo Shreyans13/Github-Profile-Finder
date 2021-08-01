@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:github_profile_finder/introScreens/Screen3.dart';
 import 'package:github_profile_finder/introScreens/screen1.dart';
 import 'package:github_profile_finder/introScreens/screen2.dart';
 import 'package:github_profile_finder/pages/home.dart';
@@ -33,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return getValue()
         ? Scaffold(
             body: LiquidSwipe(
-            pages: [Screen1(), Screen2()],
+            pages: [Screen1(), Screen2(), Screen3()],
             slideIconWidget: Icon(Icons.arrow_back_ios),
             positionSlideIcon: 0.8,
             enableLoop: false,
