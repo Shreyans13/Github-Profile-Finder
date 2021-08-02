@@ -19,7 +19,7 @@ class Screen2 extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Image.asset("./assets/images/illustration.png"),
+                child: Image.asset("./assets/images/github.png"),
               ),
               SizedBox(
                 height: 20,
