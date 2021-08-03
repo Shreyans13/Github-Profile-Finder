@@ -4,18 +4,20 @@ import 'package:github_profile_finder/introScreens/layout.dart';
 import 'package:github_profile_finder/util/customColors.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 
-class Screen2 extends StatelessWidget {
+class Screen3 extends StatelessWidget {
   final LiquidController controller;
 
-  Screen2({required this.controller});
+  Screen3({required this.controller});
 
   @override
   Widget build(BuildContext context) {
     return ScreenLayout(
-        tittle: "Analyse",
-        subTittle: "Analyse your github profile",
-        image: "./assets/images/illustrations/version_control.svg",
-        color: KDarkGreenColor,
+        tittle: "Search",
+        subTittle: "Search your github profile",
+        image: "./assets/images/illustrations/pair_programming.svg",
+        // backButton: true,
+        // nextButton: false,
+        color: KDarkBlueColor,
         controller: controller);
   }
 }

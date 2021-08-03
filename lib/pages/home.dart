@@ -7,7 +7,11 @@ class Home extends StatelessWidget {
       body: Container(
         alignment: Alignment.center,
         color: Color(0xfff3d503),
-        child: Text('Home Page'),
+        child: Chip(
+          avatar: CircleAvatar(
+              backgroundColor: Colors.blue.shade900, child: const Text('AH')),
+          label: const Text('Hamilton'),
+        ),
       ),
     );
   }

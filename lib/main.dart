@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:github_profile_finder/introScreens/Screen3.dart';
 import 'package:github_profile_finder/introScreens/screen1.dart';
 import 'package:github_profile_finder/introScreens/screen2.dart';
+import 'package:github_profile_finder/introScreens/screen3.dart';
+import 'package:github_profile_finder/introScreens/screen4.dart';
 import 'package:github_profile_finder/pages/home.dart';
 import 'package:github_profile_finder/util/util.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
@@ -29,16 +30,28 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final LiquidController controller = LiquidController();
+  pageChangeCallback(int lpage) {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return getValue()
         ? Scaffold(
             body: LiquidSwipe(
-            pages: [Screen1(), Screen2(), Screen3()],
+            pages: [
+              Screen1(controller: controller),
+              Screen2(controller: controller),
+              Screen3(controller: controller),
+              Screen4(controller: controller),
+            ],
             slideIconWidget: Icon(Icons.arrow_back_ios),
             positionSlideIcon: 0.8,
             enableLoop: false,
             enableSideReveal: true,
+            liquidController: controller,
+            onPageChangeCallback: pageChangeCallback,
           ))
         : Home();
   }
