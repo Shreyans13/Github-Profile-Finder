@@ -3,7 +3,7 @@ import 'package:github_profile_finder/introScreens/screen1.dart';
 import 'package:github_profile_finder/introScreens/screen2.dart';
 import 'package:github_profile_finder/introScreens/screen3.dart';
 import 'package:github_profile_finder/introScreens/screen4.dart';
-import 'package:github_profile_finder/pages/home.dart';
+import 'package:github_profile_finder/pages/namePage.dart';
 import 'package:github_profile_finder/util/util.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 
@@ -31,8 +31,19 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final LiquidController controller = LiquidController();
-  pageChangeCallback(int lpage) {
+  pageChangeCallback(int newPage) {
+    if (newPage == 3)
+      changeSideIcon(false);
+    else
+      changeSideIcon(true);
     setState(() {});
+  }
+
+  Icon checkIcon() {
+    if (getIcon())
+      return Icon(Icons.arrow_back_ios);
+    else
+      return Icon(null);
   }
 
   @override
@@ -46,13 +57,13 @@ class _MyHomePageState extends State<MyHomePage> {
               Screen3(controller: controller),
               Screen4(controller: controller),
             ],
-            slideIconWidget: Icon(Icons.arrow_back_ios),
+            slideIconWidget: checkIcon(),
             positionSlideIcon: 0.8,
             enableLoop: false,
             enableSideReveal: true,
             liquidController: controller,
             onPageChangeCallback: pageChangeCallback,
           ))
-        : Home();
+        : NamePage();
   }
 }

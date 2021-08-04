@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:github_profile_finder/components/customButton.dart';
+import 'package:github_profile_finder/pages/namePage.dart';
+import 'package:github_profile_finder/util/util.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 
@@ -147,11 +149,19 @@ class RowButtons extends StatelessWidget {
           ),
         ),
         Visibility(
-          visible: widget.controller.currentPage < 3 ? true : false,
+          visible: true,
+          // widget.controller.currentPage < 3 ? true : false,
           child: GestureDetector(
             onTap: () => {
-              widget.controller
-                  .animateToPage(page: widget.controller.currentPage + 1)
+              if (widget.controller.currentPage == 3)
+                {
+                  changeValue(),
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) => NamePage()))
+                }
+              else
+                widget.controller
+                    .animateToPage(page: widget.controller.currentPage + 1)
             },
             child: CustomButton(
               text: "Next",
