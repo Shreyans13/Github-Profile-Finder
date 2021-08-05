@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:github_profile_finder/components/animatedImage.dart';
+import 'package:github_profile_finder/pages/home.dart';
 import 'package:github_profile_finder/util/customColors.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:github_profile_finder/util/customText.dart';
 
 class SearchPage extends StatelessWidget {
   @override
@@ -40,20 +41,13 @@ class SearchPage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Search",
-                            style: GoogleFonts.raleway(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 25,
-                            )),
+                        KTitle(text: "Search", size: 25),
                         SizedBox(
                           height: 10,
                         ),
-                        Text(
-                            "Find your Github Profile and share it with one click",
-                            style: GoogleFonts.openSans(
-                              fontWeight: FontWeight.normal,
-                              fontSize: 17,
-                            )),
+                        KSubtitle(
+                            text:
+                                "Find your Github Profile and share it with one click"),
                         SizedBox(
                           height: 10,
                         ),
@@ -61,16 +55,28 @@ class SearchPage extends StatelessWidget {
                             decoration: InputDecoration(
                           fillColor: KDarkGreenColor,
                           border: OutlineInputBorder(),
-                          hintText: 'Enter a search term',
+                          hintText: 'Enter Github ID',
                         )),
                         SizedBox(
                           height: 10,
                         ),
-                        SizedBox(
-                          width: double.infinity,
+                        Center(
                           child: ElevatedButton(
-                              onPressed: () => {},
-                              child: Icon(Icons.play_circle_fill_rounded)),
+                              style: ElevatedButton.styleFrom(
+                                  shape: CircleBorder(),
+                                  primary: KDarkOrangeColor),
+                              onPressed: () => {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) => Home()))
+                                  },
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Icon(
+                                  Icons.search_rounded,
+                                  size: 30,
+                                ),
+                              )),
                         )
                       ],
                     ),

@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:github_profile_finder/components/customButton.dart';
-import 'package:github_profile_finder/pages/namePage.dart';
+import 'package:github_profile_finder/pages/search.dart';
+import 'package:github_profile_finder/util/customText.dart';
 import 'package:github_profile_finder/util/util.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 
 class ScreenLayout extends StatefulWidget {
@@ -63,16 +63,8 @@ class _ScreenLayoutState extends State<ScreenLayout> {
               SizedBox(
                 height: 20,
               ),
-              Text(widget.tittle,
-                  style: GoogleFonts.raleway(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 30,
-                  )),
-              Text(widget.subTittle,
-                  style: GoogleFonts.openSans(
-                    fontWeight: FontWeight.normal,
-                    fontSize: 17,
-                  )),
+              KTitle(text: widget.tittle),
+              KSubtitle(text: widget.subTittle),
               SizedBox(
                 height: 20,
               ),
@@ -156,8 +148,8 @@ class RowButtons extends StatelessWidget {
               if (widget.controller.currentPage == 3)
                 {
                   changeValue(),
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) => NamePage()))
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => SearchPage()))
                 }
               else
                 widget.controller

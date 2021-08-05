@@ -3,7 +3,7 @@ import 'package:github_profile_finder/introScreens/screen1.dart';
 import 'package:github_profile_finder/introScreens/screen2.dart';
 import 'package:github_profile_finder/introScreens/screen3.dart';
 import 'package:github_profile_finder/introScreens/screen4.dart';
-import 'package:github_profile_finder/pages/namePage.dart';
+import 'package:github_profile_finder/pages/search.dart';
 import 'package:github_profile_finder/util/util.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 
@@ -64,6 +64,6 @@ class _MyHomePageState extends State<MyHomePage> {
             liquidController: controller,
             onPageChangeCallback: pageChangeCallback,
           ))
-        : NamePage();
+        : SearchPage();
   }
 }
