@@ -3,7 +3,7 @@ import 'package:github_profile_finder/components/animatedImage.dart';
 import 'package:github_profile_finder/util/customColors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class NamePage extends StatelessWidget {
+class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
