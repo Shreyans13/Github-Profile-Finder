@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData().copyWith(
         primaryColor: Color(0xfff3d503),
       ),
@@ -50,19 +51,21 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return getValue()
         ? Scaffold(
-            body: LiquidSwipe(
-            pages: [
-              Screen1(controller: controller),
-              Screen2(controller: controller),
-              Screen3(controller: controller),
-              Screen4(controller: controller),
-            ],
-            slideIconWidget: checkIcon(),
-            positionSlideIcon: 0.8,
-            enableLoop: false,
-            enableSideReveal: true,
-            liquidController: controller,
-            onPageChangeCallback: pageChangeCallback,
+            body: SafeArea(
+            child: LiquidSwipe(
+              pages: [
+                Screen1(controller: controller),
+                Screen2(controller: controller),
+                Screen3(controller: controller),
+                Screen4(controller: controller),
+              ],
+              slideIconWidget: checkIcon(),
+              positionSlideIcon: 0.8,
+              enableLoop: false,
+              enableSideReveal: true,
+              liquidController: controller,
+              onPageChangeCallback: pageChangeCallback,
+            ),
           ))
         : SearchPage();
   }
