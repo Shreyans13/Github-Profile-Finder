@@ -56,3 +56,138 @@ String githubMarkup = '''
 
             ''';
 getMarkup() => githubMarkup;
+
+String code = '''
+const express = require("express");
+const app = express();
+
+const path = require("path");
+
+const directoryPath = path.join(__dirname, "public");
+
+const fs = require("fs");
+
+app.use(express.static("public"));
+
+const modifyFileData = (files, location) => {
+	const output = [];
+
+	files.forEach((file) => {
+		const obj = {};
+		if (
+			fs
+				.lstatSync(path.resolve(__dirname, "public/" + location, file))
+				.isDirectory()
+		) {
+			obj["type"] = "Directory";
+			obj["file"] = file;
+			obj["link"] = (
+				"http://localhost:3000/get?path=" +
+				location +
+				"/" +
+				file
+			)
+				.split(" ")
+				.join("%20");
+		} else {
+			obj["type"] = "File";
+			obj["file"] = file;
+			obj["link"] = ("http://localhost:3000/" + location + "/" + file)
+				.split(" ")
+				.join("%20");
+		}
+		output.push(obj);
+	});
+	return output;
+};
+
+app.get("/", (req, res) => {
+	fs.readdir(directoryPath, (err, files) => {
+		if (err) {
+			res.send("Unable to scan directory: " + err);
+		} else {
+			const output = [];
+
+			files.forEach((file) => {
+				const obj = {};
+				if (
+					fs
+						.lstatSync(path.resolve(directoryPath, file))
+						.isDirectory()
+				) {
+					obj["type"] = "Directory";
+					obj["file"] = file;
+					obj["link"] = ("http://localhost:3000/get?path=" + file)
+						.split(" ")
+						.join("%20");
+				} else {
+					obj["type"] = "File";
+					obj["file"] = file;
+					obj["link"] = ("http://localhost:3000/" + file)
+						.split(" ")
+						.join("%20");
+				}
+				output.push(obj);
+			});
+			res.json(output);
+		}
+	});
+});
+
+app.get("/get", (req, res) => {
+	fs.readdir(
+		path.join(__dirname, "public/" + req.query.path),
+		(err, files) => {
+			if (err) {
+				res.send("Unable to scan directory: " + err);
+			} else {
+				const output = [];
+				// res.send(modifyFileData(files, req.query.path));
+
+				files.forEach((file) => {
+					const obj = {};
+					if (
+						fs
+							.lstatSync(
+								path.resolve(
+									__dirname,
+									"public/" + req.query.path,
+									file
+								)
+							)
+							.isDirectory()
+					) {
+						obj["type"] = "Directory";
+						obj["file"] = file;
+						obj["link"] = (
+							"http://localhost:3000/get?path=" +
+							req.query.path +
+							"/" +
+							file
+						)
+							.split(" ")
+							.join("%20");
+					} else {
+						obj["type"] = "File";
+						obj["file"] = file;
+						obj["link"] = (
+							"http://localhost:3000/" +
+							req.query.path +
+							"/" +
+							file
+						)
+							.split(" ")
+							.join("%20");
+					}
+					output.push(obj);
+				});
+				res.json(output);
+			}
+		}
+	);
+});
+app.listen(3000, () => {
+	console.log("server running at port " + 3000);
+});
+''';
+getCode() => code;

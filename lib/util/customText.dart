@@ -18,10 +18,12 @@ class KTitle extends StatelessWidget {
 class KSubtitle extends StatelessWidget {
   final String text;
   double size;
-  KSubtitle({required this.text, this.size = 17});
+  final bool overflow;
+  KSubtitle({required this.text, this.size = 17, this.overflow = false});
   @override
   Widget build(BuildContext context) {
     return Text(text,
+        overflow: overflow ? TextOverflow.ellipsis : TextOverflow.visible,
         style: GoogleFonts.openSans(
           fontWeight: FontWeight.normal,
           fontSize: size,

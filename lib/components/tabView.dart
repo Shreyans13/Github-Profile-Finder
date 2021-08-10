@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:github_profile_finder/pages/tabs/about.dart';
+import 'package:github_profile_finder/pages/tabs/followers.dart';
+import 'package:github_profile_finder/pages/tabs/gist.dart';
 import 'package:github_profile_finder/pages/tabs/repository.dart';
 
 class TabViews extends StatefulWidget {
@@ -13,10 +14,10 @@ class _TabViewsState extends State<TabViews> with TickerProviderStateMixin {
   late TabController _tabController;
 
   List<Widget> _tabs = [
-    Tab(text: "About"),
+    // Tab(text: "About"),
     Tab(text: "Repository"),
-    // Tab(text: "Gists"),
-    // Tab(text: "Followers"),
+    Tab(text: "Gists"),
+    Tab(text: "Followers"),
     // Tab(text: "Following"),
     // Tab(text: "Events")
   ];
@@ -40,7 +41,7 @@ class _TabViewsState extends State<TabViews> with TickerProviderStateMixin {
         Expanded(
           child: TabBarView(
             controller: _tabController,
-            children: [About(), Repository()],
+            children: [Repository(), Gist(), Followers()],
           ),
         ),
       ],

@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
                 .push(MaterialPageRoute(builder: (context) => SearchPage()));
           },
           child: const Icon(Icons.search_rounded),
-          backgroundColor: KDarkGreenColor,
+          backgroundColor: KDarkOrangeColor,
         ),
         body: SafeArea(
           child: Column(
