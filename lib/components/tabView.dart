@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:github_profile_finder/pages/tabs/followers.dart';
+import 'package:github_profile_finder/pages/tabs/following.dart';
 import 'package:github_profile_finder/pages/tabs/gist.dart';
 import 'package:github_profile_finder/pages/tabs/repository.dart';
 
@@ -18,7 +19,7 @@ class _TabViewsState extends State<TabViews> with TickerProviderStateMixin {
     Tab(text: "Repository"),
     Tab(text: "Gists"),
     Tab(text: "Followers"),
-    // Tab(text: "Following"),
+    Tab(text: "Following"),
     // Tab(text: "Events")
   ];
 
@@ -41,7 +42,7 @@ class _TabViewsState extends State<TabViews> with TickerProviderStateMixin {
         Expanded(
           child: TabBarView(
             controller: _tabController,
-            children: [Repository(), Gist(), Followers()],
+            children: [Repository(), Gist(), Followers(), Following()],
           ),
         ),
       ],
