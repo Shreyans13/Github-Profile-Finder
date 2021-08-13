@@ -46,29 +46,18 @@ class Following extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CircleAvatar(
-                        maxRadius: 15,
-                        child: Icon(
-                          Icons.follow_the_signs,
-                          size: 20,
-                          color: Colors.black,
-                        ),
-
-                        backgroundColor: Colors.white54,
-                        // maxRadius: ,
+                      Icon(
+                        Icons.follow_the_signs,
+                        size: 20,
+                        color: Colors.black,
                       ),
                       SizedBox(width: 10),
                       KSubtitle(text: "38", size: 15),
                       SizedBox(width: 15),
-                      CircleAvatar(
-                        maxRadius: 15,
-                        child: Icon(
-                          Icons.follow_the_signs,
-                          size: 20,
-                          color: Colors.black,
-                        ),
-                        backgroundColor: Colors.white54,
-                        // maxRadius: ,
+                      Icon(
+                        Icons.follow_the_signs,
+                        size: 20,
+                        color: Colors.black,
                       ),
                       SizedBox(width: 10),
                       KSubtitle(text: "33", size: 15),
@@ -96,26 +85,18 @@ class Following extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CircleAvatar(
-                        maxRadius: 15,
-                        child: Icon(
-                          Icons.follow_the_signs,
-                          size: 20,
-                        ),
-                        backgroundColor: Colors.white54,
-                        // maxRadius: ,
+                      Icon(
+                        Icons.follow_the_signs,
+                        size: 20,
+                        color: Colors.black,
                       ),
                       SizedBox(width: 10),
                       KSubtitle(text: "38", size: 15),
                       SizedBox(width: 15),
-                      CircleAvatar(
-                        maxRadius: 15,
-                        child: Icon(
-                          Icons.follow_the_signs,
-                          size: 20,
-                        ),
-                        backgroundColor: Colors.white54,
-                        // maxRadius: ,
+                      Icon(
+                        Icons.follow_the_signs,
+                        size: 20,
+                        color: Colors.black,
                       ),
                       SizedBox(width: 10),
                       KSubtitle(text: "33", size: 15),
@@ -143,26 +124,18 @@ class Following extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CircleAvatar(
-                        maxRadius: 15,
-                        child: Icon(
-                          Icons.follow_the_signs,
-                          size: 20,
-                        ),
-                        backgroundColor: Colors.white54,
-                        // maxRadius: ,
+                      Icon(
+                        Icons.follow_the_signs,
+                        size: 20,
+                        color: Colors.black,
                       ),
                       SizedBox(width: 10),
                       KSubtitle(text: "38", size: 15),
                       SizedBox(width: 15),
-                      CircleAvatar(
-                        maxRadius: 15,
-                        child: Icon(
-                          Icons.follow_the_signs,
-                          size: 20,
-                        ),
-                        backgroundColor: Colors.white54,
-                        // maxRadius: ,
+                      Icon(
+                        Icons.follow_the_signs,
+                        size: 20,
+                        color: Colors.black,
                       ),
                       SizedBox(width: 10),
                       KSubtitle(text: "33", size: 15),
@@ -190,26 +163,18 @@ class Following extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CircleAvatar(
-                        maxRadius: 15,
-                        child: Icon(
-                          Icons.follow_the_signs,
-                          size: 20,
-                        ),
-                        backgroundColor: Colors.white54,
-                        // maxRadius: ,
+                      Icon(
+                        Icons.follow_the_signs,
+                        size: 20,
+                        color: Colors.black,
                       ),
                       SizedBox(width: 10),
                       KSubtitle(text: "38", size: 15),
                       SizedBox(width: 15),
-                      CircleAvatar(
-                        maxRadius: 15,
-                        child: Icon(
-                          Icons.follow_the_signs,
-                          size: 20,
-                        ),
-                        backgroundColor: Colors.white54,
-                        // maxRadius: ,
+                      Icon(
+                        Icons.follow_the_signs,
+                        size: 20,
+                        color: Colors.black,
                       ),
                       SizedBox(width: 10),
                       KSubtitle(text: "33", size: 15),
@@ -237,26 +202,18 @@ class Following extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CircleAvatar(
-                        maxRadius: 15,
-                        child: Icon(
-                          Icons.follow_the_signs,
-                          size: 20,
-                        ),
-                        backgroundColor: Colors.white54,
-                        // maxRadius: ,
+                      Icon(
+                        Icons.follow_the_signs,
+                        size: 20,
+                        color: Colors.black,
                       ),
                       SizedBox(width: 10),
                       KSubtitle(text: "38", size: 15),
                       SizedBox(width: 15),
-                      CircleAvatar(
-                        maxRadius: 15,
-                        child: Icon(
-                          Icons.follow_the_signs,
-                          size: 20,
-                        ),
-                        backgroundColor: Colors.white54,
-                        // maxRadius: ,
+                      Icon(
+                        Icons.follow_the_signs,
+                        size: 20,
+                        color: Colors.black,
                       ),
                       SizedBox(width: 10),
                       KSubtitle(text: "33", size: 15),
@@ -284,26 +241,18 @@ class Following extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CircleAvatar(
-                        maxRadius: 15,
-                        child: Icon(
-                          Icons.follow_the_signs,
-                          size: 20,
-                        ),
-                        backgroundColor: Colors.white54,
-                        // maxRadius: ,
+                      Icon(
+                        Icons.follow_the_signs,
+                        size: 20,
+                        color: Colors.black,
                       ),
                       SizedBox(width: 10),
                       KSubtitle(text: "38", size: 15),
                       SizedBox(width: 15),
-                      CircleAvatar(
-                        maxRadius: 15,
-                        child: Icon(
-                          Icons.follow_the_signs,
-                          size: 20,
-                        ),
-                        backgroundColor: Colors.white54,
-                        // maxRadius: ,
+                      Icon(
+                        Icons.follow_the_signs,
+                        size: 20,
+                        color: Colors.black,
                       ),
                       SizedBox(width: 10),
                       KSubtitle(text: "33", size: 15),
@@ -331,26 +280,18 @@ class Following extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CircleAvatar(
-                        maxRadius: 15,
-                        child: Icon(
-                          Icons.follow_the_signs,
-                          size: 20,
-                        ),
-                        backgroundColor: Colors.white54,
-                        // maxRadius: ,
+                      Icon(
+                        Icons.follow_the_signs,
+                        size: 20,
+                        color: Colors.black,
                       ),
                       SizedBox(width: 10),
                       KSubtitle(text: "38", size: 15),
                       SizedBox(width: 15),
-                      CircleAvatar(
-                        maxRadius: 15,
-                        child: Icon(
-                          Icons.follow_the_signs,
-                          size: 20,
-                        ),
-                        backgroundColor: Colors.white54,
-                        // maxRadius: ,
+                      Icon(
+                        Icons.follow_the_signs,
+                        size: 20,
+                        color: Colors.black,
                       ),
                       SizedBox(width: 10),
                       KSubtitle(text: "33", size: 15),
@@ -378,26 +319,18 @@ class Following extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CircleAvatar(
-                        maxRadius: 15,
-                        child: Icon(
-                          Icons.follow_the_signs,
-                          size: 20,
-                        ),
-                        backgroundColor: Colors.white54,
-                        // maxRadius: ,
+                      Icon(
+                        Icons.follow_the_signs,
+                        size: 20,
+                        color: Colors.black,
                       ),
                       SizedBox(width: 10),
                       KSubtitle(text: "38", size: 15),
                       SizedBox(width: 15),
-                      CircleAvatar(
-                        maxRadius: 15,
-                        child: Icon(
-                          Icons.follow_the_signs,
-                          size: 20,
-                        ),
-                        backgroundColor: Colors.white54,
-                        // maxRadius: ,
+                      Icon(
+                        Icons.follow_the_signs,
+                        size: 20,
+                        color: Colors.black,
                       ),
                       SizedBox(width: 10),
                       KSubtitle(text: "33", size: 15),
@@ -425,26 +358,18 @@ class Following extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CircleAvatar(
-                        maxRadius: 15,
-                        child: Icon(
-                          Icons.follow_the_signs,
-                          size: 20,
-                        ),
-                        backgroundColor: Colors.white54,
-                        // maxRadius: ,
+                      Icon(
+                        Icons.follow_the_signs,
+                        size: 20,
+                        color: Colors.black,
                       ),
                       SizedBox(width: 10),
                       KSubtitle(text: "38", size: 15),
                       SizedBox(width: 15),
-                      CircleAvatar(
-                        maxRadius: 15,
-                        child: Icon(
-                          Icons.follow_the_signs,
-                          size: 20,
-                        ),
-                        backgroundColor: Colors.white54,
-                        // maxRadius: ,
+                      Icon(
+                        Icons.follow_the_signs,
+                        size: 20,
+                        color: Colors.black,
                       ),
                       SizedBox(width: 10),
                       KSubtitle(text: "33", size: 15),
