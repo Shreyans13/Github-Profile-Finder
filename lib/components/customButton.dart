@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomButton extends StatelessWidget {
-  final Icon icon;
+  final FaIcon icon;
   final String text;
   final bool iconVisible;
   final Color backgroundColor;

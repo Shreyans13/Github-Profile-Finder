@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_profile_finder/components/customButton.dart';
 import 'package:github_profile_finder/pages/search.dart';
 import 'package:github_profile_finder/util/customText.dart';
@@ -99,10 +100,7 @@ class RowButtons extends StatelessWidget {
             child: CustomButton(
               text: "Skip",
               iconVisible: true,
-              icon: Icon(
-                CupertinoIcons.rocket_fill,
-                color: Colors.black,
-              ),
+              icon: FaIcon(FontAwesomeIcons.rocket),
               backgroundColor: Colors.white,
               textColor: Colors.black,
             ),
@@ -124,11 +122,7 @@ class RowButtons extends StatelessWidget {
             child: CustomButton(
               text: "Back",
               iconVisible: true,
-              icon: Icon(
-                CupertinoIcons.back,
-                color: Colors.black,
-                // size: 20,
-              ),
+              icon: FaIcon(FontAwesomeIcons.solidHandPointLeft),
               backgroundColor: Colors.white,
               textColor: Colors.black,
             ),
@@ -158,11 +152,8 @@ class RowButtons extends StatelessWidget {
             child: CustomButton(
               text: "Next",
               iconVisible: true,
-              icon: Icon(
-                CupertinoIcons.forward,
-                color: Colors.white,
-                // size: 20,
-              ),
+              icon: FaIcon(FontAwesomeIcons.solidHandPointRight,
+                  color: Colors.white),
               backgroundColor: Colors.black,
               textColor: Colors.white,
             ),

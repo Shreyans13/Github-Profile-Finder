@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_profile_finder/util/customColors.dart';
 import 'package:github_profile_finder/util/customText.dart';
 
@@ -40,17 +41,11 @@ class Followers extends StatelessWidget {
               ),
               subtitle: Row(
                 children: [
-                  Icon(
-                    Icons.follow_the_signs,
-                    size: 20,
-                  ),
+                  FaIcon(FontAwesomeIcons.userFriends, size: 15),
                   SizedBox(width: 10),
                   KSubtitle(text: "38 Followers", size: 15),
                   SizedBox(width: 15),
-                  Icon(
-                    Icons.follow_the_signs,
-                    size: 20,
-                  ),
+                  FaIcon(FontAwesomeIcons.users, size: 15),
                   SizedBox(width: 10),
                   KSubtitle(text: "33 Following", size: 15),
                 ],

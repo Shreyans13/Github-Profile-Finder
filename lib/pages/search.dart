@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_profile_finder/components/animatedImage.dart';
 import 'package:github_profile_finder/pages/home.dart';
 import 'package:github_profile_finder/util/customColors.dart';
@@ -74,12 +75,8 @@ class SearchPage extends StatelessWidget {
                                                 builder: (context) => Home()))
                                       },
                                   child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Icon(
-                                      Icons.search_rounded,
-                                      size: 30,
-                                    ),
-                                  )),
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: FaIcon(FontAwesomeIcons.search))),
                             ),
                           )
                         ],

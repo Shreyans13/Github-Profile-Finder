@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_profile_finder/util/customColors.dart';
 import 'package:github_profile_finder/util/customText.dart';
 
@@ -44,15 +45,15 @@ class Repository extends StatelessWidget {
                     SizedBox(height: 20),
                     Row(
                       children: [
-                        Icon(Icons.star_border_sharp),
+                        FaIcon(FontAwesomeIcons.star, size: 20),
                         SizedBox(width: 10),
                         KSubtitle(text: "4", size: 15),
                         SizedBox(width: 15),
-                        Icon(CupertinoIcons.tuningfork),
+                        FaIcon(FontAwesomeIcons.codeBranch, size: 20),
                         SizedBox(width: 10),
                         KSubtitle(text: "1", size: 15),
                         SizedBox(width: 15),
-                        Icon(CupertinoIcons.viewfinder),
+                        FaIcon(FontAwesomeIcons.vuejs, size: 22),
                         SizedBox(width: 10),
                         KSubtitle(text: "Vue", size: 15),
                       ],

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_profile_finder/util/customColors.dart';
 import 'package:github_profile_finder/util/customText.dart';
 
@@ -46,19 +47,11 @@ class Following extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.follow_the_signs,
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                      FaIcon(FontAwesomeIcons.userFriends, size: 15),
                       SizedBox(width: 10),
                       KSubtitle(text: "38", size: 15),
                       SizedBox(width: 15),
-                      Icon(
-                        Icons.follow_the_signs,
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                      FaIcon(FontAwesomeIcons.users, size: 15),
                       SizedBox(width: 10),
                       KSubtitle(text: "33", size: 15),
                     ],
@@ -85,19 +78,11 @@ class Following extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.follow_the_signs,
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                      FaIcon(FontAwesomeIcons.userFriends, size: 15),
                       SizedBox(width: 10),
                       KSubtitle(text: "38", size: 15),
                       SizedBox(width: 15),
-                      Icon(
-                        Icons.follow_the_signs,
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                      FaIcon(FontAwesomeIcons.users, size: 15),
                       SizedBox(width: 10),
                       KSubtitle(text: "33", size: 15),
                     ],
@@ -124,19 +109,11 @@ class Following extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.follow_the_signs,
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                      FaIcon(FontAwesomeIcons.userFriends, size: 15),
                       SizedBox(width: 10),
                       KSubtitle(text: "38", size: 15),
                       SizedBox(width: 15),
-                      Icon(
-                        Icons.follow_the_signs,
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                      FaIcon(FontAwesomeIcons.users, size: 15),
                       SizedBox(width: 10),
                       KSubtitle(text: "33", size: 15),
                     ],
@@ -163,19 +140,11 @@ class Following extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.follow_the_signs,
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                      FaIcon(FontAwesomeIcons.userFriends, size: 15),
                       SizedBox(width: 10),
                       KSubtitle(text: "38", size: 15),
                       SizedBox(width: 15),
-                      Icon(
-                        Icons.follow_the_signs,
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                      FaIcon(FontAwesomeIcons.users, size: 15),
                       SizedBox(width: 10),
                       KSubtitle(text: "33", size: 15),
                     ],
@@ -202,19 +171,11 @@ class Following extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.follow_the_signs,
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                      FaIcon(FontAwesomeIcons.userFriends, size: 15),
                       SizedBox(width: 10),
                       KSubtitle(text: "38", size: 15),
                       SizedBox(width: 15),
-                      Icon(
-                        Icons.follow_the_signs,
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                      FaIcon(FontAwesomeIcons.users, size: 15),
                       SizedBox(width: 10),
                       KSubtitle(text: "33", size: 15),
                     ],
@@ -241,19 +202,11 @@ class Following extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.follow_the_signs,
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                      FaIcon(FontAwesomeIcons.userFriends, size: 15),
                       SizedBox(width: 10),
                       KSubtitle(text: "38", size: 15),
                       SizedBox(width: 15),
-                      Icon(
-                        Icons.follow_the_signs,
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                      FaIcon(FontAwesomeIcons.users, size: 15),
                       SizedBox(width: 10),
                       KSubtitle(text: "33", size: 15),
                     ],
@@ -280,19 +233,11 @@ class Following extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.follow_the_signs,
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                      FaIcon(FontAwesomeIcons.userFriends, size: 15),
                       SizedBox(width: 10),
                       KSubtitle(text: "38", size: 15),
                       SizedBox(width: 15),
-                      Icon(
-                        Icons.follow_the_signs,
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                      FaIcon(FontAwesomeIcons.users, size: 15),
                       SizedBox(width: 10),
                       KSubtitle(text: "33", size: 15),
                     ],
@@ -319,19 +264,11 @@ class Following extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.follow_the_signs,
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                      FaIcon(FontAwesomeIcons.userFriends, size: 15),
                       SizedBox(width: 10),
                       KSubtitle(text: "38", size: 15),
                       SizedBox(width: 15),
-                      Icon(
-                        Icons.follow_the_signs,
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                      FaIcon(FontAwesomeIcons.users, size: 15),
                       SizedBox(width: 10),
                       KSubtitle(text: "33", size: 15),
                     ],
@@ -358,19 +295,11 @@ class Following extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.follow_the_signs,
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                      FaIcon(FontAwesomeIcons.userFriends, size: 15),
                       SizedBox(width: 10),
                       KSubtitle(text: "38", size: 15),
                       SizedBox(width: 15),
-                      Icon(
-                        Icons.follow_the_signs,
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                      FaIcon(FontAwesomeIcons.users, size: 15),
                       SizedBox(width: 10),
                       KSubtitle(text: "33", size: 15),
                     ],

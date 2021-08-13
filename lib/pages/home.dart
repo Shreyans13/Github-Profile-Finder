@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_profile_finder/api/api.dart';
 import 'package:github_profile_finder/components/tabView.dart';
 import 'package:github_profile_finder/pages/search.dart';
@@ -16,7 +17,7 @@ class Home extends StatelessWidget {
             Navigator.of(context)
                 .push(MaterialPageRoute(builder: (context) => SearchPage()));
           },
-          child: const Icon(Icons.search_rounded),
+          child: const FaIcon(FontAwesomeIcons.search, size: 20),
           backgroundColor: KDarkOrangeColor,
         ),
         body: SafeArea(
@@ -50,9 +51,21 @@ class Home extends StatelessWidget {
                         ),
                       ],
                     ),
-                    KSubtitle(text: "🌚 Jamshedpur"),
+                    Row(
+                      children: [
+                        FaIcon(FontAwesomeIcons.streetView),
+                        SizedBox(width: 10),
+                        KSubtitle(text: "Jamshedpur"),
+                      ],
+                    ),
                     SizedBox(height: 10),
-                    KSubtitle(text: "🌚 shreyans1313@gmail.com"),
+                    Row(
+                      children: [
+                        FaIcon(FontAwesomeIcons.solidEnvelope),
+                        SizedBox(width: 10),
+                        KSubtitle(text: "shreyans1313@gmail.com"),
+                      ],
+                    ),
                   ],
                 ),
               ),

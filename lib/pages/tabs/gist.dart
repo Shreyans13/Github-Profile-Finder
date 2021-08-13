@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_profile_finder/util/customColors.dart';
 import 'package:github_profile_finder/util/customText.dart';
 import 'package:github_profile_finder/util/util.dart';
@@ -78,7 +79,7 @@ class Gist extends StatelessWidget {
                     SizedBox(height: 20),
                     Row(
                       children: [
-                        Icon(Icons.star_border_sharp),
+                        FaIcon(FontAwesomeIcons.js),
                         SizedBox(width: 10),
                         KSubtitle(text: "Javascript", size: 15),
                       ],
