@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:github_profile_finder/api/api.dart';
 import 'package:github_profile_finder/components/tabView.dart';
 import 'package:github_profile_finder/pages/search.dart';
 import 'package:github_profile_finder/util/customColors.dart';
@@ -8,6 +9,7 @@ import 'package:github_profile_finder/util/customText.dart';
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    API().getUsers("Shreyans13");
     return Scaffold(
         floatingActionButton: FloatingActionButton(
           onPressed: () {
