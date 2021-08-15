@@ -25,30 +25,50 @@ class Followers extends StatelessWidget {
           padding: const EdgeInsets.all(8),
           itemCount: 30,
           itemBuilder: (BuildContext context, int index) {
-            return ListTile(
-              tileColor: colorCodes[index % 3],
-              leading: CircleAvatar(
-                backgroundImage: NetworkImage(
-                    "https://avatars.githubusercontent.com/u/50544190?v=4"),
-              ),
-              title: KSubtitle(
-                text: "Shreyans Jain",
-              ),
-              // isThreeLine: true,
-              shape: RoundedRectangleBorder(
-                side: BorderSide(color: colorCodes[index % 3], width: 1),
+            return Container(
+              decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  width: 1.3,
+                  color: colorCodes[index % 3],
+                ),
+                color: colorCodes[index % 3],
               ),
-              subtitle: Row(
-                children: [
-                  FaIcon(FontAwesomeIcons.userFriends, size: 15),
-                  SizedBox(width: 10),
-                  KSubtitle(text: "38 Followers", size: 15),
-                  SizedBox(width: 15),
-                  FaIcon(FontAwesomeIcons.users, size: 15),
-                  SizedBox(width: 10),
-                  KSubtitle(text: "33 Following", size: 15),
-                ],
+              // height: 150,
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          "https://avatars.githubusercontent.com/u/50544190?v=4"),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        KSubtitle(
+                          text: "Shreyans Jain",
+                        ),
+                        Row(
+                          children: [
+                            FaIcon(FontAwesomeIcons.userFriends, size: 15),
+                            SizedBox(width: 10),
+                            KSubtitle(text: "38 Followers", size: 15),
+                            SizedBox(width: 15),
+                            FaIcon(FontAwesomeIcons.users, size: 15),
+                            SizedBox(width: 10),
+                            KSubtitle(text: "33 Following", size: 15),
+                          ],
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             );
           },
