@@ -9,6 +9,7 @@ class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: KDarkGreenColor,
       body: SafeArea(
         child: Container(
             alignment: Alignment.center,

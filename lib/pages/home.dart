@@ -12,6 +12,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     API().getUsers("Shreyans13");
     return Scaffold(
+        backgroundColor: Colors.white,
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             Navigator.of(context)
@@ -53,7 +54,7 @@ class Home extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        FaIcon(FontAwesomeIcons.streetView),
+                        FaIcon(FontAwesomeIcons.streetView, size: 20),
                         SizedBox(width: 10),
                         KSubtitle(text: "Jamshedpur"),
                       ],
@@ -61,9 +62,13 @@ class Home extends StatelessWidget {
                     SizedBox(height: 10),
                     Row(
                       children: [
-                        FaIcon(FontAwesomeIcons.solidEnvelope),
+                        FaIcon(FontAwesomeIcons.userFriends, size: 20),
                         SizedBox(width: 10),
-                        KSubtitle(text: "shreyans1313@gmail.com"),
+                        KSubtitle(text: "38 Followers", size: 15),
+                        SizedBox(width: 15),
+                        FaIcon(FontAwesomeIcons.users, size: 20),
+                        SizedBox(width: 10),
+                        KSubtitle(text: "33 Following", size: 15),
                       ],
                     ),
                   ],
