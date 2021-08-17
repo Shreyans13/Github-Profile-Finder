@@ -14,21 +14,7 @@ class TabViews extends StatefulWidget {
 class _TabViewsState extends State<TabViews> with TickerProviderStateMixin {
   late TabController _tabController;
   List<Widget> _tabs = [
-    // Tab(text: "About"),
     Tab(text: "Repository"),
-    // Tab(
-    //     child: Text(
-    //   "Repository",
-    //   style: TextStyle(backgroundColor: Colors.red, color: Colors.blue),
-    // )),
-    // Tab(
-    //     child: Container(
-    //         padding: EdgeInsets.all(0),
-    //         margin: EdgeInsets.all(0),
-    //         child: Text(
-    //           "Gists",
-    //           style: TextStyle(backgroundColor: Colors.red, color: Colors.blue),
-    //         ))),
     Tab(text: "Gists"),
     Tab(text: "Followers"),
     Tab(text: "Following"),

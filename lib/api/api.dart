@@ -1,22 +1,27 @@
 import 'package:flutter_config/flutter_config.dart';
+import 'package:github_profile_finder/models/repository.dart';
+import 'package:github_profile_finder/models/user.dart';
 import 'package:http/http.dart' as http;
 
 class API {
-  Future getUsers(String name) async {
-    print(FlutterConfig.get("API_TOKEN"));
-    Map<String, String> headers = {
-      'Authorization': 'Bearer ' + FlutterConfig.get("API_TOKEN")
-    };
-    var request = http.Request(
-        'GET', Uri.parse('https://api.github.com/users/Shreyans13'));
-    request.headers.addAll(headers);
-    http.StreamedResponse response = await request.send();
+  String userName;
 
-    if (response.statusCode == 200) {
-      print(await response.stream.bytesToString());
-      // return await response.stream.bytesToString();
-    } else {
-      print(response.reasonPhrase);
-    }
+  API({required this.userName});
+
+  final String baseUrl = "https://api.github.com";
+  Map<String, String> headers = {
+    'Authorization': 'Bearer ' + FlutterConfig.get("API_TOKEN")
+  };
+
+  Future<User> getUser() async {
+    final response =
+        await http.get(Uri.parse(this.baseUrl + "/users/" + userName));
+    return userFromJson(response.body);
+  }
+
+  Future<List<RepositoryModel>> getRepository() async {
+    final response = await http
+        .get(Uri.parse(this.baseUrl + "/users/" + userName + "/repos"));
+    return allPostsFromJson(response.body);
   }
 }
