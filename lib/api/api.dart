@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter_config/flutter_config.dart';
 import 'package:github_profile_finder/models/repository.dart';
 import 'package:github_profile_finder/models/user.dart';
@@ -14,14 +16,15 @@ class API {
   };
 
   Future<User> getUser() async {
-    final response =
-        await http.get(Uri.parse(this.baseUrl + "/users/" + userName));
+    final response = await http
+        .get(Uri.parse(this.baseUrl + "/users/" + userName), headers: headers);
     return userFromJson(response.body);
   }
 
   Future<List<RepositoryModel>> getRepository() async {
-    final response = await http
-        .get(Uri.parse(this.baseUrl + "/users/" + userName + "/repos"));
+    final response = await http.get(
+        Uri.parse(this.baseUrl + "/users/" + userName + "/repos"),
+        headers: headers);
     return allPostsFromJson(response.body);
   }
 }

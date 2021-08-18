@@ -1,5 +1,7 @@
 // ignore: non_constant_identifier_names
-bool shared_pref = true;
+import 'package:github_profile_finder/api/api.dart';
+
+bool shared_pref = false;
 getValue() => shared_pref;
 changeValue() => shared_pref = false;
 
@@ -191,3 +193,6 @@ app.listen(3000, () => {
 });
 ''';
 getCode() => code;
+
+API apiObj = API(userName: "Yogeshk4124");
+getApiOBJ() => apiObj;
