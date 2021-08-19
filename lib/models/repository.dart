@@ -37,7 +37,7 @@ class RepositoryModel {
 RepositoryModel repositoryFromJson(String str) =>
     RepositoryModel.fromJson(json.decode(str));
 
-List<RepositoryModel> allPostsFromJson(String str) {
+List<RepositoryModel> allRepositoryFromJson(String str) {
   final jsonData = json.decode(str);
   return new List<RepositoryModel>.from(
       jsonData.map((x) => RepositoryModel.fromJson(x)));

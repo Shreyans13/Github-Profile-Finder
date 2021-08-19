@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:github_profile_finder/models/gist.dart';
 import 'package:github_profile_finder/util/customColors.dart';
 import 'package:github_profile_finder/util/customText.dart';
 import 'package:github_profile_finder/util/util.dart';
@@ -21,11 +22,38 @@ class Gist extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return FutureBuilder<List<GistModel>>(
+        future: getApiOBJ().getGist(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            if (snapshot.hasError) {
+              return Text("Error");
+            }
+            return GistTab(
+              colorCodes: colorCodes,
+              gist: snapshot.data!,
+            );
+          } else
+            return CircularProgressIndicator();
+        });
+  }
+}
+
+class GistTab extends StatelessWidget {
+  const GistTab({
+    required this.gist,
+    required this.colorCodes,
+  });
+
+  final List<Color> colorCodes;
+  final List<GistModel> gist;
+  @override
+  Widget build(BuildContext context) {
     return Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView.separated(
           padding: const EdgeInsets.all(8),
-          itemCount: 30,
+          itemCount: gist.length,
           itemBuilder: (BuildContext context, int index) {
             return Container(
               decoration: BoxDecoration(
@@ -47,12 +75,9 @@ class Gist extends StatelessWidget {
                       size: 20,
                     ),
                     KSubtitle(
-                        text: "forked from shortdiv/vuex-modules", size: 12),
-                    KSubtitle(
-                      text:
-                          "A simple node js code to serve static files and folders to your WIFI network via ExpressJs in a json format. Simply add the file/folder you want to share over your wifi to a public folder and view that file over your Wifi network.",
+                      text: gist[index].description,
                       size: 15,
-                      overflow: true,
+                      // overflow: true,
                     ),
                     SizedBox(height: 20),
                     Container(
