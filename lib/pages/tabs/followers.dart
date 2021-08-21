@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:github_profile_finder/models/followers.dart';
 import 'package:github_profile_finder/util/customColors.dart';
 import 'package:github_profile_finder/util/customText.dart';
+import 'package:github_profile_finder/util/util.dart';
 
 class Followers extends StatelessWidget {
   // const Repository({Key? key}) : super(key: key);
@@ -16,6 +18,35 @@ class Followers extends StatelessWidget {
     KDarkYellowColor,
     KDarkGreenColor
   ];
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<List<FollowersModel>>(
+        future: getApiOBJ().getFollowers(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            if (snapshot.hasError) {
+              return Text("Error");
+            }
+            return FollowersTab(
+              colorCodes: colorCodes,
+              followers: snapshot.data!,
+            );
+          } else
+            return CircularProgressIndicator();
+        });
+  }
+}
+
+class FollowersTab extends StatelessWidget {
+  const FollowersTab({
+    Key? key,
+    required this.colorCodes,
+    required this.followers,
+  }) : super(key: key);
+
+  final List<Color> colorCodes;
+  final List<FollowersModel> followers;
 
   @override
   Widget build(BuildContext context) {
@@ -41,8 +72,7 @@ class Followers extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CircleAvatar(
-                      backgroundImage: NetworkImage(
-                          "https://avatars.githubusercontent.com/u/50544190?v=4"),
+                      backgroundImage: NetworkImage(followers[index].avatar),
                     ),
                     SizedBox(
                       width: 10,
@@ -52,7 +82,7 @@ class Followers extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         KSubtitle(
-                          text: "Shreyans Jain",
+                          text: "followers[index].name",
                         ),
                         Row(
                           children: [

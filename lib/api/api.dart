@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter_config/flutter_config.dart';
+import 'package:github_profile_finder/models/followers.dart';
+import 'package:github_profile_finder/models/following.dart';
 import 'package:github_profile_finder/models/gist.dart';
 import 'package:github_profile_finder/models/repository.dart';
 import 'package:github_profile_finder/models/user.dart';
@@ -39,5 +41,19 @@ class API {
         Uri.parse(this.baseUrl + "/users/" + userName + "/gists"),
         headers: headers);
     return allGistsFromJson(response.body);
+  }
+
+  Future<List<FollowersModel>> getFollowers() async {
+    final response = await http.get(
+        Uri.parse(this.baseUrl + "/users/" + userName + "/followers"),
+        headers: headers);
+    return allFollowersFromJson(response.body);
+  }
+
+  Future<List<FollowingModel>> getFollowing() async {
+    final response = await http.get(
+        Uri.parse(this.baseUrl + "/users/" + userName + "/following"),
+        headers: headers);
+    return allFollowingFromJson(response.body);
   }
 }

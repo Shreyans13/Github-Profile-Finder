@@ -2,8 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:github_profile_finder/models/followers.dart';
+import 'package:github_profile_finder/models/following.dart';
 import 'package:github_profile_finder/util/customColors.dart';
 import 'package:github_profile_finder/util/customText.dart';
+import 'package:github_profile_finder/util/util.dart';
 
 class Following extends StatelessWidget {
   // const Repository({Key? key}) : super(key: key);
@@ -16,6 +19,34 @@ class Following extends StatelessWidget {
     KDarkYellowColor,
     KDarkGreenColor
   ];
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<List<FollowingModel>>(
+        future: getApiOBJ().getFollowing(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            if (snapshot.hasError) {
+              return Text("Error");
+            }
+
+            return FollowingTab(
+              colorCodes: colorCodes,
+              following: snapshot.data!,
+            );
+          } else
+            return CircularProgressIndicator();
+        });
+  }
+}
+
+class FollowingTab extends StatelessWidget {
+  const FollowingTab(
+      {Key? key, required this.colorCodes, required this.following})
+      : super(key: key);
+
+  final List<Color> colorCodes;
+  final List<FollowingModel> following;
 
   @override
   Widget build(BuildContext context) {
