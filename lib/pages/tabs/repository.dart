@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:github_profile_finder/components/programmingLanguageIcon.dart';
 import 'package:github_profile_finder/models/repository.dart';
 import 'package:github_profile_finder/util/consts.dart';
 import 'package:github_profile_finder/util/customColors.dart';
@@ -45,22 +46,6 @@ class RepositoryTab extends StatelessWidget {
   final List<Color> colorCodes;
   final List<RepositoryModel> repo;
 
-  Widget getIcon(String icon) {
-    // print(icon);
-    // languageIcon[icon] == null ? getApiOBJ().checkImageExistOrNot == "":  : languageIcon[icon];
-
-    return Container(
-      width: 20,
-      child: Image.network(languageIcon[icon].toString(),
-          errorBuilder: (context, a, b) => Container(
-                width: 20,
-                child: Image.network(
-                    "https://raw.githubusercontent.com/github/explore/549f36e938c7a2323fee1a465e812c7a69128979/topics/${icon.toLowerCase()}/${icon.toLowerCase()}.png",
-                    errorBuilder: (context, a, b) => Text("Image not found")),
-              )),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -100,7 +85,7 @@ class RepositoryTab extends StatelessWidget {
                           child: Row(
                             children: [
                               SizedBox(width: 15),
-                              getIcon(repo[index].language),
+                              programmingLanguageIcon(repo[index].language),
                               SizedBox(width: 10),
                               KSubtitle(text: repo[index].language, size: 15),
                             ],

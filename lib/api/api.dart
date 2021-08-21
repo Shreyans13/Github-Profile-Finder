@@ -22,6 +22,11 @@ class API {
     return userFromJson(response.body);
   }
 
+  Future<RawData> getRawData(String url) async {
+    final response = await http.get(Uri.parse(url), headers: headers);
+    return dataFromUrl(response.body.toString());
+  }
+
   Future<List<RepositoryModel>> getRepository() async {
     final response = await http.get(
         Uri.parse(this.baseUrl + "/users/" + userName + "/repos"),

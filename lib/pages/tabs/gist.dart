@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:github_profile_finder/components/programmingLanguageIcon.dart';
 import 'package:github_profile_finder/models/gist.dart';
 import 'package:github_profile_finder/util/customColors.dart';
 import 'package:github_profile_finder/util/customText.dart';
@@ -27,7 +28,7 @@ class Gist extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasError) {
-              return Text("Error");
+              return Text(snapshot.error.toString());
             }
             return GistTab(
               colorCodes: colorCodes,
@@ -40,13 +41,14 @@ class Gist extends StatelessWidget {
 }
 
 class GistTab extends StatelessWidget {
-  const GistTab({
+  GistTab({
     required this.gist,
     required this.colorCodes,
   });
 
   final List<Color> colorCodes;
   final List<GistModel> gist;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -71,7 +73,7 @@ class GistTab extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     KTitle(
-                      text: "Eats",
+                      text: gist[index].name,
                       size: 20,
                     ),
                     KSubtitle(
@@ -92,21 +94,15 @@ class GistTab extends StatelessWidget {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text(getCode(),
-                            maxLines: 2,
-                            overflow: TextOverflow.fade,
-                            style: GoogleFonts.shareTechMono(
-                              fontWeight: FontWeight.normal,
-                              fontSize: 17,
-                            )),
+                        child: CodeBlock(url: gist[index].rawUrl),
                       ),
                     ),
                     SizedBox(height: 20),
                     Row(
                       children: [
-                        FaIcon(FontAwesomeIcons.js),
+                        programmingLanguageIcon(gist[index].language),
                         SizedBox(width: 10),
-                        KSubtitle(text: "Javascript", size: 15),
+                        KSubtitle(text: gist[index].language, size: 15),
                       ],
                     ),
                   ],
@@ -117,5 +113,30 @@ class GistTab extends StatelessWidget {
           separatorBuilder: (BuildContext context, int index) =>
               const SizedBox(height: 20),
         ));
+  }
+}
+
+class CodeBlock extends StatelessWidget {
+  CodeBlock({required this.url});
+  String url;
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<RawData>(
+        future: getApiOBJ().getRawData(url),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            if (snapshot.hasError) {
+              return Text(snapshot.error.toString());
+            }
+            return Text(snapshot.data!.raw,
+                maxLines: 2,
+                overflow: TextOverflow.fade,
+                style: GoogleFonts.shareTechMono(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 17,
+                ));
+          } else
+            return LinearProgressIndicator();
+        });
   }
 }
