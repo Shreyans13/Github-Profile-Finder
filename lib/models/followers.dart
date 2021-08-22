@@ -2,14 +2,12 @@ import "dart:convert";
 
 class FollowersModel {
   String avatar;
-  FollowersModel({
-    required this.avatar,
-  });
+  String userName;
+
+  FollowersModel({required this.avatar, required this.userName});
 
   factory FollowersModel.fromJson(Map<String, dynamic> json) =>
-      new FollowersModel(
-        avatar: json["avatar_url"],
-      );
+      new FollowersModel(avatar: json["avatar_url"], userName: json["login"]);
 
   Map<String, dynamic> toJson() => {
         "avatar_url": avatar,

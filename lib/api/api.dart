@@ -24,6 +24,13 @@ class API {
     return userFromJson(response.body);
   }
 
+  Future<User> getUserfromLoginID(String login) async {
+    final response = await http.get(Uri.parse(this.baseUrl + "/users/" + login),
+        headers: headers);
+    print(response.body);
+    return userFromJson(response.body);
+  }
+
   Future<RawData> getRawData(String url) async {
     final response = await http.get(Uri.parse(url), headers: headers);
     return dataFromUrl(response.body.toString());

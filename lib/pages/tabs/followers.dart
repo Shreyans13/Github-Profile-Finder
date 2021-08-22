@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_profile_finder/models/followers.dart';
+import 'package:github_profile_finder/models/user.dart';
 import 'package:github_profile_finder/util/customColors.dart';
 import 'package:github_profile_finder/util/customText.dart';
 import 'package:github_profile_finder/util/util.dart';
@@ -66,44 +67,88 @@ class FollowersTab extends StatelessWidget {
                 color: colorCodes[index % 3],
               ),
               // height: 150,
-              child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CircleAvatar(
-                      backgroundImage: NetworkImage(followers[index].avatar),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        KSubtitle(
-                          text: "followers[index].name",
-                        ),
-                        Row(
-                          children: [
-                            FaIcon(FontAwesomeIcons.userFriends, size: 15),
-                            SizedBox(width: 10),
-                            KSubtitle(text: "38 Followers", size: 15),
-                            SizedBox(width: 15),
-                            FaIcon(FontAwesomeIcons.users, size: 15),
-                            SizedBox(width: 10),
-                            KSubtitle(text: "33 Following", size: 15),
-                          ],
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
+              child: FollowersTabDataApi(userName: followers[index].userName),
             );
           },
           separatorBuilder: (BuildContext context, int index) =>
               const SizedBox(height: 20),
         ));
+  }
+}
+
+class FollowersTabDataApi extends StatelessWidget {
+  const FollowersTabDataApi({
+    Key? key,
+    required this.userName,
+  }) : super(key: key);
+
+  final String userName;
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<User>(
+        future: getApiOBJ().getUserfromLoginID(userName),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            if (snapshot.hasError) {
+              return Text("FollowersTabDataApi " + snapshot.error.toString());
+            }
+            return FollowersTabDataWidget(
+              follower: snapshot.data!,
+            );
+          } else
+            return LinearProgressIndicator();
+        });
+  }
+}
+
+class FollowersTabDataWidget extends StatelessWidget {
+  const FollowersTabDataWidget({required this.follower});
+
+  final User follower;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CircleAvatar(
+            backgroundImage: NetworkImage(follower.avatar),
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              KSubtitle(
+                text: follower.login,
+              ),
+              Row(
+                children: [
+                  FaIcon(FontAwesomeIcons.userFriends, size: 15),
+                  SizedBox(width: 10),
+                  KSubtitle(
+                    text: follower.followers.toString() + " Followers",
+                    size: 15,
+                    overflow: true,
+                  ),
+                  SizedBox(width: 15),
+                  FaIcon(FontAwesomeIcons.users, size: 15),
+                  SizedBox(width: 10),
+                  KSubtitle(
+                    text: follower.following.toString() + " Following",
+                    size: 15,
+                    overflow: true,
+                  ),
+                ],
+              ),
+            ],
+          )
+        ],
+      ),
+    );
   }
 }

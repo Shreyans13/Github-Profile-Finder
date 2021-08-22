@@ -17,9 +17,9 @@ class User {
 
   factory User.fromJson(Map<String, dynamic> json) => new User(
         login: json["login"],
-        bio: json["bio"],
+        bio: json["bio"] == null ? "" : json["bio"],
         avatar: json["avatar_url"],
-        location: json["location"],
+        location: json["location"] == null ? "" : json["location"],
         followers: json["followers"],
         following: json["following"],
       );
