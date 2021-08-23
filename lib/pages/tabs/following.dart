@@ -62,7 +62,9 @@ class FollowingTab extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 color: colorCodes[index % 3],
               ),
-              child: FollowingTabDataApi(userName: following[index].userName),
+              child: FollowingTabDataApi(
+                  userName: following[index].userName,
+                  color: colorCodes[index % 3]),
             );
           },
           separatorBuilder: (BuildContext context, int index) =>
@@ -72,8 +74,9 @@ class FollowingTab extends StatelessWidget {
 }
 
 class FollowingTabDataApi extends StatelessWidget {
-  const FollowingTabDataApi({required this.userName});
+  const FollowingTabDataApi({required this.userName, required this.color});
   final String userName;
+  final Color color;
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<User>(
@@ -87,7 +90,9 @@ class FollowingTabDataApi extends StatelessWidget {
               user: snapshot.data!,
             );
           } else
-            return LinearLoader();
+            return LinearLoader(
+              color: color,
+            );
         });
   }
 }

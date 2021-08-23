@@ -7,25 +7,28 @@ class CircularLoader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: color,
-      child: Center(
-        child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.white24,
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: CircularProgressIndicator(),
-            )),
+    return Center(
+      child: Container(
+        // color: color,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(7),
+          color: color,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: CircularProgressIndicator(
+            backgroundColor: Colors.white54,
+            color: color,
+          ),
+        ),
       ),
     );
   }
 }
 
 class LinearLoader extends StatelessWidget {
-  const LinearLoader({Key? key}) : super(key: key);
+  final Color color;
+  const LinearLoader({Key? key, required this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +39,10 @@ class LinearLoader extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: LinearProgressIndicator(),
+        child: LinearProgressIndicator(
+          backgroundColor: Colors.white54,
+          color: color,
+        ),
       ),
     );
   }

@@ -97,7 +97,9 @@ class GistTab extends StatelessWidget {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: CodeBlock(url: gist[index].rawUrl),
+                        child: CodeBlock(
+                            url: gist[index].rawUrl,
+                            color: colorCodes[index % 3]),
                       ),
                     ),
                     SizedBox(height: 20),
@@ -120,8 +122,9 @@ class GistTab extends StatelessWidget {
 }
 
 class CodeBlock extends StatelessWidget {
-  CodeBlock({required this.url});
-  String url;
+  const CodeBlock({required this.url, required this.color});
+  final String url;
+  final Color color;
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<RawData>(
@@ -139,7 +142,9 @@ class CodeBlock extends StatelessWidget {
                   fontSize: 17,
                 ));
           } else
-            return LinearLoader();
+            return LinearLoader(
+              color: KDarkYellowColor,
+            );
         });
   }
 }
