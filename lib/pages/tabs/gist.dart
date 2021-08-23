@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:github_profile_finder/components/loader.dart';
 import 'package:github_profile_finder/components/programmingLanguageIcon.dart';
 import 'package:github_profile_finder/models/gist.dart';
 import 'package:github_profile_finder/util/customColors.dart';
@@ -35,7 +36,9 @@ class Gist extends StatelessWidget {
               gist: snapshot.data!,
             );
           } else
-            return CircularProgressIndicator();
+            return CircularLoader(
+              color: KDarkYellowColor,
+            );
         });
   }
 }
@@ -136,7 +139,7 @@ class CodeBlock extends StatelessWidget {
                   fontSize: 17,
                 ));
           } else
-            return LinearProgressIndicator();
+            return LinearLoader();
         });
   }
 }

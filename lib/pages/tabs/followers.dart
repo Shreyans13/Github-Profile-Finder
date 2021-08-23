@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:github_profile_finder/components/loader.dart';
 import 'package:github_profile_finder/components/user.dart';
 import 'package:github_profile_finder/models/followers.dart';
 import 'package:github_profile_finder/models/user.dart';
@@ -31,7 +32,9 @@ class Followers extends StatelessWidget {
               followers: snapshot.data!,
             );
           } else
-            return CircularProgressIndicator();
+            return CircularLoader(
+              color: KDarkGreenColor,
+            );
         });
   }
 }
@@ -89,7 +92,7 @@ class FollowersTabDataApi extends StatelessWidget {
               user: snapshot.data!,
             );
           } else
-            return LinearProgressIndicator();
+            return LinearLoader();
         });
   }
 }

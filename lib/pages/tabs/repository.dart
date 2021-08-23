@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:github_profile_finder/components/loader.dart';
 import 'package:github_profile_finder/components/programmingLanguageIcon.dart';
 import 'package:github_profile_finder/models/repository.dart';
 import 'package:github_profile_finder/util/consts.dart';
@@ -32,7 +33,9 @@ class Repository extends StatelessWidget {
               repo: snapshot.data!,
             );
           } else
-            return CircularProgressIndicator();
+            return CircularLoader(
+              color: KDarkBlueColor,
+            );
         });
   }
 }

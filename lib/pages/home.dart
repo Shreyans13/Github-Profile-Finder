@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:github_profile_finder/components/loader.dart';
 import 'package:github_profile_finder/components/tabView.dart';
 import 'package:github_profile_finder/models/user.dart';
 import 'package:github_profile_finder/pages/search.dart';
@@ -33,7 +34,7 @@ class Home extends StatelessWidget {
                   user: snapshot.data!,
                 );
               } else
-                return CircularProgressIndicator();
+                return Center(child: CircularProgressIndicator());
             }));
   }
 }
