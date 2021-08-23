@@ -143,7 +143,7 @@ class CodeBlock extends StatelessWidget {
                 ));
           } else
             return LinearLoader(
-              color: KDarkYellowColor,
+              color: color,
             );
         });
   }
