@@ -9,12 +9,8 @@ import 'package:github_profile_finder/util/customText.dart';
 import 'package:github_profile_finder/util/util.dart';
 
 class Followers extends StatelessWidget {
-  // const Repository({Key? key}) : super(key: key);
   final List<String> entries = <String>['A', 'B', 'C', 'D'];
   final List<Color> colorCodes = [
-    // KLightBlueColor,
-    // KLightYellowColor,
-    // KLightGreenColor,
     KDarkBlueColor,
     KDarkYellowColor,
     KDarkGreenColor
@@ -60,13 +56,8 @@ class FollowersTab extends StatelessWidget {
             return Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(
-                  width: 1.3,
-                  color: colorCodes[index % 3],
-                ),
                 color: colorCodes[index % 3],
               ),
-              // height: 150,
               child: FollowersTabDataApi(userName: followers[index].userName),
             );
           },
@@ -111,39 +102,73 @@ class FollowersTabDataWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CircleAvatar(
-            backgroundImage: NetworkImage(follower.avatar),
+          Container(
+            width: 50,
+            child: ClipRRect(
+              borderRadius: BorderRadius.all(
+                  Radius.circular(10.0)), //add border radius here
+              child: Image.network(follower.avatar), //add image location here
+            ),
           ),
           SizedBox(
             width: 10,
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              KSubtitle(
+              KTitle(
+                size: 17,
                 text: follower.login,
               ),
-              Row(
-                children: [
-                  FaIcon(FontAwesomeIcons.userFriends, size: 15),
-                  SizedBox(width: 10),
-                  KSubtitle(
-                    text: follower.followers.toString() + " Followers",
-                    size: 15,
-                    overflow: true,
-                  ),
-                  SizedBox(width: 15),
-                  FaIcon(FontAwesomeIcons.users, size: 15),
-                  SizedBox(width: 10),
-                  KSubtitle(
-                    text: follower.following.toString() + " Following",
-                    size: 15,
-                    overflow: true,
-                  ),
-                ],
+              follower.bio != ""
+                  ? Container(
+                      width: MediaQuery.of(context).size.width * 0.65,
+                      child: Wrap(children: [
+                        KSubtitle(
+                          text: follower.bio,
+                          // overflow: true,
+                        ),
+                      ]),
+                    )
+                  : SizedBox(height: 5),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.65,
+                child: Wrap(
+                  alignment: WrapAlignment.start,
+                  direction: Axis.horizontal,
+                  crossAxisAlignment: WrapCrossAlignment.start,
+                  runAlignment: WrapAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        FaIcon(FontAwesomeIcons.userFriends, size: 15),
+                        SizedBox(width: 10),
+                        KSubtitle(
+                          text: follower.followers.toString() + " Followers",
+                          size: 15,
+                          // overflow: true,
+                        ),
+                        SizedBox(width: 15),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        FaIcon(FontAwesomeIcons.users, size: 15),
+                        SizedBox(width: 10),
+                        KSubtitle(
+                          text: follower.following.toString() + " Following",
+                          size: 15,
+                          // overflow: true,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             ],
           )
