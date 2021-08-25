@@ -1,0 +1,1 @@
+-keep class com.shreyans13.github_profile_finder.BuildConfig { *; }

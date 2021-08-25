@@ -1,7 +1,7 @@
 // ignore: non_constant_identifier_names
 import 'package:github_profile_finder/api/api.dart';
 
-bool shared_pref = false;
+bool shared_pref = true;
 getValue() => shared_pref;
 changeValue() => shared_pref = false;
 
