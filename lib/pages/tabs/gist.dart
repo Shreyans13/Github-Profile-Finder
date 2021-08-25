@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_profile_finder/components/loader.dart';
 import 'package:github_profile_finder/components/programmingLanguageIcon.dart';
 import 'package:github_profile_finder/models/gist.dart';
@@ -25,7 +24,7 @@ class Gist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<GistModel>>(
-        future: getApiOBJ().getGist(),
+        future: getUtility().getApiOBJ().getGist(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasError) {
@@ -128,7 +127,7 @@ class CodeBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<RawData>(
-        future: getApiOBJ().getRawData(url),
+        future: getUtility().getApiOBJ().getRawData(url),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasError) {

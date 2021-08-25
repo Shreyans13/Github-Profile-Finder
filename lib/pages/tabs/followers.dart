@@ -1,13 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_profile_finder/components/loader.dart';
 import 'package:github_profile_finder/components/user.dart';
 import 'package:github_profile_finder/models/followers.dart';
 import 'package:github_profile_finder/models/user.dart';
 import 'package:github_profile_finder/util/customColors.dart';
-import 'package:github_profile_finder/util/customText.dart';
 import 'package:github_profile_finder/util/util.dart';
 
 class Followers extends StatelessWidget {
@@ -21,7 +19,7 @@ class Followers extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<FollowersModel>>(
-        future: getApiOBJ().getFollowers(),
+        future: getUtility().getApiOBJ().getFollowers(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasError) {
@@ -83,7 +81,7 @@ class FollowersTabDataApi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<User>(
-        future: getApiOBJ().getUserfromLoginID(userName),
+        future: getUtility().getApiOBJ().getUserfromLoginID(userName),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasError) {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// ignore: must_be_immutable
 class KTitle extends StatelessWidget {
   final String text;
   double size;
@@ -15,6 +16,7 @@ class KTitle extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class KSubtitle extends StatelessWidget {
   final String text;
   double size;

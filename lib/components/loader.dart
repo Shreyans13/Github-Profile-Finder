@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:github_profile_finder/util/customColors.dart';
 
 class CircularLoader extends StatelessWidget {
   final Color color;

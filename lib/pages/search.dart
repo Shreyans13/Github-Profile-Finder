@@ -4,11 +4,32 @@ import 'package:github_profile_finder/components/animatedImage.dart';
 import 'package:github_profile_finder/pages/home.dart';
 import 'package:github_profile_finder/util/customColors.dart';
 import 'package:github_profile_finder/util/customText.dart';
+import 'package:github_profile_finder/util/util.dart';
 
-class SearchPage extends StatelessWidget {
+class SearchPage extends StatefulWidget {
+  @override
+  _SearchPageState createState() => _SearchPageState();
+}
+
+class _SearchPageState extends State<SearchPage> {
+  late TextEditingController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // resizeToAvoidBottomInset: false,
       backgroundColor: KDarkGreenColor,
       body: SafeArea(
         child: Container(
@@ -55,11 +76,12 @@ class SearchPage extends StatelessWidget {
                             height: 10,
                           ),
                           TextField(
+                              controller: _controller,
                               decoration: InputDecoration(
-                            fillColor: KDarkGreenColor,
-                            border: OutlineInputBorder(),
-                            hintText: 'Enter Github ID',
-                          )),
+                                fillColor: KDarkGreenColor,
+                                border: OutlineInputBorder(),
+                                hintText: 'Enter Github ID',
+                              )),
                           SizedBox(
                             height: 10,
                           ),
@@ -73,7 +95,9 @@ class SearchPage extends StatelessWidget {
                                   onPressed: () => {
                                         Navigator.of(context).push(
                                             MaterialPageRoute(
-                                                builder: (context) => Home()))
+                                                builder: (context) => Home())),
+                                        getUtility()
+                                            .initiateApi(_controller.value.text)
                                       },
                                   child: Padding(
                                       padding: const EdgeInsets.all(8.0),

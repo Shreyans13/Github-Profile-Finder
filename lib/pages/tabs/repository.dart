@@ -4,7 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_profile_finder/components/loader.dart';
 import 'package:github_profile_finder/components/programmingLanguageIcon.dart';
 import 'package:github_profile_finder/models/repository.dart';
-import 'package:github_profile_finder/util/consts.dart';
 import 'package:github_profile_finder/util/customColors.dart';
 import 'package:github_profile_finder/util/customText.dart';
 import 'package:github_profile_finder/util/util.dart';
@@ -21,7 +20,7 @@ class Repository extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<RepositoryModel>>(
-        future: getApiOBJ().getRepository(),
+        future: getUtility().getApiOBJ().getRepository(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasError) {

@@ -1,7 +1,5 @@
 import "dart:convert";
 
-import 'package:github_profile_finder/util/util.dart';
-
 class RawData {
   String raw;
 
@@ -52,12 +50,6 @@ class GistModel {
   Map<String, dynamic> toJson() => {
         "description": description,
       };
-}
-
-RawData getData(data) {
-  // print(data);
-  print(getApiOBJ().getRawData(data));
-  return getApiOBJ().getRawData(data);
 }
 
 GistModel gistFromJson(String str) => GistModel.fromJson(json.decode(str));

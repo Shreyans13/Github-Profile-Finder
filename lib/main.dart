@@ -40,9 +40,9 @@ class _MyHomePageState extends State<MyHomePage> {
   final LiquidController controller = LiquidController();
   pageChangeCallback(int newPage) {
     if (newPage == 3)
-      changeSideIcon(false);
+      getUtility().changeSideIcon(false);
     else
-      changeSideIcon(true);
+      getUtility().changeSideIcon(true);
     switch (newPage) {
       case 0:
         _color = KDarkOrangeColor;
@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Icon checkIcon() {
-    if (getIcon())
+    if (getUtility().getIcon())
       return Icon(Icons.arrow_back_ios);
     else
       return Icon(null);

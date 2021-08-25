@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:github_profile_finder/components/loader.dart';
 import 'package:github_profile_finder/components/tabView.dart';
 import 'package:github_profile_finder/models/user.dart';
 import 'package:github_profile_finder/pages/search.dart';
@@ -23,7 +22,7 @@ class Home extends StatelessWidget {
           backgroundColor: KDarkOrangeColor,
         ),
         body: FutureBuilder<User>(
-            future: getApiOBJ().getUser(),
+            future: getUtility().getApiOBJ().getUser(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
                 if (snapshot.hasError) {
