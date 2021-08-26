@@ -12,8 +12,8 @@ class Screen2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenLayout(
-        tittle: "Analyse",
-        subTittle: "Analyse your github profile",
+        tittle: "Search",
+        subTittle: "Search your github profile",
         image: "./assets/images/illustrations/version_control.svg",
         color: KDarkGreenColor,
         controller: controller);

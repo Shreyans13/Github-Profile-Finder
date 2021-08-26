@@ -12,8 +12,8 @@ class Screen3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenLayout(
-        tittle: "Search",
-        subTittle: "Search your github profile",
+        tittle: "Analyse",
+        subTittle: "Analyse your github profile",
         image: "./assets/images/illustrations/pair_programming.svg",
         // backButton: true,
         // nextButton: false,
