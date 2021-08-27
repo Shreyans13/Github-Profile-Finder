@@ -5,6 +5,7 @@ import 'package:github_profile_finder/components/loader.dart';
 import 'package:github_profile_finder/components/user.dart';
 import 'package:github_profile_finder/models/followers.dart';
 import 'package:github_profile_finder/models/user.dart';
+import 'package:github_profile_finder/pages/error.dart';
 import 'package:github_profile_finder/util/customColors.dart';
 import 'package:github_profile_finder/util/util.dart';
 
@@ -23,7 +24,7 @@ class Followers extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasError) {
-              return Text("Error");
+              return ErrorPage(errorMessage: snapshot.error.toString());
             }
             return FollowersTab(
               colorCodes: colorCodes,
@@ -85,7 +86,7 @@ class FollowersTabDataApi extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasError) {
-              return Text("FollowersTabDataApi " + snapshot.error.toString());
+              return ErrorPage(errorMessage: snapshot.error.toString());
             }
             return UserTabData(
               user: snapshot.data!,

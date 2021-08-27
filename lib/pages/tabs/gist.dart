@@ -4,6 +4,7 @@ import 'package:flutter/painting.dart';
 import 'package:github_profile_finder/components/loader.dart';
 import 'package:github_profile_finder/components/programmingLanguageIcon.dart';
 import 'package:github_profile_finder/models/gist.dart';
+import 'package:github_profile_finder/pages/error.dart';
 import 'package:github_profile_finder/util/customColors.dart';
 import 'package:github_profile_finder/util/customText.dart';
 import 'package:github_profile_finder/util/util.dart';
@@ -28,7 +29,7 @@ class Gist extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasError) {
-              return Text(snapshot.error.toString());
+              return ErrorPage(errorMessage: snapshot.error.toString());
             }
             return GistTab(
               colorCodes: colorCodes,
@@ -131,7 +132,7 @@ class CodeBlock extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasError) {
-              return Text(snapshot.error.toString());
+              return ErrorPage(errorMessage: snapshot.error.toString());
             }
             return Text(snapshot.data!.raw,
                 maxLines: 2,

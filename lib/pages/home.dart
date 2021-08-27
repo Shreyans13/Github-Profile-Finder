@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_profile_finder/components/tabView.dart';
 import 'package:github_profile_finder/models/user.dart';
+import 'package:github_profile_finder/pages/error.dart';
 import 'package:github_profile_finder/pages/search.dart';
 import 'package:github_profile_finder/util/customColors.dart';
 import 'package:github_profile_finder/util/customText.dart';
@@ -26,7 +27,7 @@ class Home extends StatelessWidget {
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
                 if (snapshot.hasError) {
-                  return Text("Error");
+                  return ErrorPage(errorMessage: snapshot.error.toString());
                 }
 
                 return HomePage(
