@@ -49,60 +49,64 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+      child: user.message != null
+          ? ErrorPage(errorMessage: "Profile " + (user.message ?? ""))
+          : Column(
               children: [
-                KSubtitle(text: 'Hey, ${user.login}'),
-                Row(
-                  children: [
-                    Expanded(
-                      flex: 3,
-                      child: KTitle(
-                        text: user.bio,
-                        // size: 20,
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      KSubtitle(text: 'Hey, ${user.login}'),
+                      Row(
+                        children: [
+                          Expanded(
+                            flex: 3,
+                            child: KTitle(
+                              text: user.bio,
+                              // size: 20,
+                            ),
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: Container(
+                              height: 75,
+                              width: 75,
+                              child: CircleAvatar(
+                                backgroundImage: NetworkImage(user.avatar),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: Container(
-                        height: 75,
-                        width: 75,
-                        child: CircleAvatar(
-                          backgroundImage: NetworkImage(user.avatar),
-                        ),
+                      Row(
+                        children: [
+                          FaIcon(FontAwesomeIcons.streetView, size: 20),
+                          SizedBox(width: 10),
+                          KSubtitle(text: user.location),
+                        ],
                       ),
-                    ),
-                  ],
+                      SizedBox(height: 10),
+                      Row(
+                        children: [
+                          FaIcon(FontAwesomeIcons.userFriends, size: 20),
+                          SizedBox(width: 10),
+                          KSubtitle(
+                              text: '${user.followers} Followers', size: 15),
+                          SizedBox(width: 15),
+                          FaIcon(FontAwesomeIcons.users, size: 20),
+                          SizedBox(width: 10),
+                          KSubtitle(
+                              text: '${user.following} Following', size: 15),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-                Row(
-                  children: [
-                    FaIcon(FontAwesomeIcons.streetView, size: 20),
-                    SizedBox(width: 10),
-                    KSubtitle(text: user.location),
-                  ],
-                ),
-                SizedBox(height: 10),
-                Row(
-                  children: [
-                    FaIcon(FontAwesomeIcons.userFriends, size: 20),
-                    SizedBox(width: 10),
-                    KSubtitle(text: '${user.followers} Followers', size: 15),
-                    SizedBox(width: 15),
-                    FaIcon(FontAwesomeIcons.users, size: 20),
-                    SizedBox(width: 10),
-                    KSubtitle(text: '${user.following} Following', size: 15),
-                  ],
-                ),
+                Expanded(child: TabViews()),
               ],
             ),
-          ),
-          Expanded(child: TabViews()),
-        ],
-      ),
     );
   }
 }
