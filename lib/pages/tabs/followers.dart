@@ -50,25 +50,27 @@ class FollowersTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView.separated(
-          padding: const EdgeInsets.all(8),
-          itemCount: followers.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: colorCodes[index % 3],
-              ),
-              child: FollowersTabDataApi(
-                  userName: followers[index].userName,
-                  color: colorCodes[index % 3]),
-            );
-          },
-          separatorBuilder: (BuildContext context, int index) =>
-              const SizedBox(height: 20),
-        ));
+    return followers.length == 0
+        ? ErrorPage(errorMessage: "No Followers", btnVisibility: false)
+        : Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: ListView.separated(
+              padding: const EdgeInsets.all(8),
+              itemCount: followers.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: colorCodes[index % 3],
+                  ),
+                  child: FollowersTabDataApi(
+                      userName: followers[index].userName,
+                      color: colorCodes[index % 3]),
+                );
+              },
+              separatorBuilder: (BuildContext context, int index) =>
+                  const SizedBox(height: 20),
+            ));
   }
 }
 

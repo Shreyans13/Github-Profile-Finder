@@ -54,70 +54,73 @@ class GistTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView.separated(
-          padding: const EdgeInsets.all(8),
-          itemCount: gist.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(
-                  width: 1.3,
-                  color: colorCodes[index % 3],
-                ),
-                color: colorCodes[index % 3],
-              ),
-              // height: 150,
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    KTitle(
-                      text: gist[index].name,
-                      size: 20,
+    return gist.length == 0
+        ? ErrorPage(
+            errorMessage: "No Gist created by user", btnVisibility: false)
+        : Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: ListView.separated(
+              padding: const EdgeInsets.all(8),
+              itemCount: gist.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      width: 1.3,
+                      color: colorCodes[index % 3],
                     ),
-                    KSubtitle(
-                      text: gist[index].description,
-                      size: 15,
-                      // overflow: true,
-                    ),
-                    SizedBox(height: 20),
-                    Container(
-                      // color: Colors.white,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.white60,
-                        // border: Border.all(
-                        //   width: 1.3,
-                        //   color: Colors.white60,
-                        // ),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: CodeBlock(
-                            url: gist[index].rawUrl,
-                            color: colorCodes[index % 3]),
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    Row(
+                    color: colorCodes[index % 3],
+                  ),
+                  // height: 150,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        programmingLanguageIcon(gist[index].language),
-                        SizedBox(width: 10),
-                        KSubtitle(text: gist[index].language, size: 15),
+                        KTitle(
+                          text: gist[index].name,
+                          size: 20,
+                        ),
+                        KSubtitle(
+                          text: gist[index].description,
+                          size: 15,
+                          // overflow: true,
+                        ),
+                        SizedBox(height: 20),
+                        Container(
+                          // color: Colors.white,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white60,
+                            // border: Border.all(
+                            //   width: 1.3,
+                            //   color: Colors.white60,
+                            // ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: CodeBlock(
+                                url: gist[index].rawUrl,
+                                color: colorCodes[index % 3]),
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            programmingLanguageIcon(gist[index].language),
+                            SizedBox(width: 10),
+                            KSubtitle(text: gist[index].language, size: 15),
+                          ],
+                        ),
                       ],
                     ),
-                  ],
-                ),
-              ),
-            );
-          },
-          separatorBuilder: (BuildContext context, int index) =>
-              const SizedBox(height: 20),
-        ));
+                  ),
+                );
+              },
+              separatorBuilder: (BuildContext context, int index) =>
+                  const SizedBox(height: 20),
+            ));
   }
 }
 

@@ -51,59 +51,65 @@ class RepositoryTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView.separated(
-          padding: const EdgeInsets.all(8),
-          itemCount: repo.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: colorCodes[index % 3],
-              ),
-              // height: 150,
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    KTitle(
-                      text: repo[index].name,
-                      size: 20,
-                    ),
-                    KSubtitle(text: repo[index].desc, size: 15),
-                    SizedBox(height: 20),
-                    Row(
+    return repo.length == 0
+        ? ErrorPage(
+            errorMessage: "No Repository created by user", btnVisibility: false)
+        : Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: ListView.separated(
+              padding: const EdgeInsets.all(8),
+              itemCount: repo.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: colorCodes[index % 3],
+                  ),
+                  // height: 150,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        FaIcon(FontAwesomeIcons.star, size: 20),
-                        SizedBox(width: 10),
-                        KSubtitle(text: repo[index].stars.toString(), size: 15),
-                        SizedBox(width: 15),
-                        FaIcon(FontAwesomeIcons.codeBranch, size: 20),
-                        SizedBox(width: 10),
-                        KSubtitle(text: repo[index].forks.toString(), size: 15),
-                        Visibility(
-                          visible: repo[index].language != "",
-                          child: Row(
-                            children: [
-                              SizedBox(width: 15),
-                              programmingLanguageIcon(repo[index].language),
-                              SizedBox(width: 10),
-                              KSubtitle(text: repo[index].language, size: 15),
-                            ],
-                          ),
-                        )
+                        KTitle(
+                          text: repo[index].name,
+                          size: 20,
+                        ),
+                        KSubtitle(text: repo[index].desc, size: 15),
+                        SizedBox(height: 20),
+                        Row(
+                          children: [
+                            FaIcon(FontAwesomeIcons.star, size: 20),
+                            SizedBox(width: 10),
+                            KSubtitle(
+                                text: repo[index].stars.toString(), size: 15),
+                            SizedBox(width: 15),
+                            FaIcon(FontAwesomeIcons.codeBranch, size: 20),
+                            SizedBox(width: 10),
+                            KSubtitle(
+                                text: repo[index].forks.toString(), size: 15),
+                            Visibility(
+                              visible: repo[index].language != "",
+                              child: Row(
+                                children: [
+                                  SizedBox(width: 15),
+                                  programmingLanguageIcon(repo[index].language),
+                                  SizedBox(width: 10),
+                                  KSubtitle(
+                                      text: repo[index].language, size: 15),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
                       ],
                     ),
-                  ],
-                ),
-              ),
-            );
-          },
-          separatorBuilder: (BuildContext context, int index) =>
-              const SizedBox(height: 20),
-        ));
+                  ),
+                );
+              },
+              separatorBuilder: (BuildContext context, int index) =>
+                  const SizedBox(height: 20),
+            ));
   }
 }
 

@@ -9,8 +9,12 @@ import 'package:google_fonts/google_fonts.dart';
 class ErrorPage extends StatelessWidget {
   final String errorTitle;
   final String errorMessage;
+  final bool btnVisibility;
+
   const ErrorPage(
-      {this.errorTitle = "We all make mistakes", required this.errorMessage});
+      {this.errorTitle = "We all make mistakes",
+      required this.errorMessage,
+      this.btnVisibility = true});
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +34,16 @@ class ErrorPage extends StatelessWidget {
           SizedBox(height: 5),
           Center(child: KSubtitle(text: errorMessage)),
           SizedBox(height: 20),
-          FractionallySizedBox(
-            widthFactor: 0.3,
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: Text("Retry"),
+          Visibility(
+            visible: btnVisibility,
+            child: FractionallySizedBox(
+              widthFactor: 0.3,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("Retry"),
+              ),
             ),
           ),
         ],
