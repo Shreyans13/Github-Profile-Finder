@@ -22,7 +22,8 @@ Inspired from [GithubProfileFinder](https://vtrrix.github.io/Github-profile-find
 <img src="./screenshots/4.png" height="400em" /> <img src="./screenshots/5.png" height="400em" /> 
 <img src="./screenshots/6.png" height="400em" /> <img src="./screenshots/7.png" height="400em" /> 
 <img src="./screenshots/8.png" height="400em" /> <img src="./screenshots/9.png" height="400em" /> 
-<img src="./screenshots/10.png" height="400em" /> 
+<img src="./screenshots/10.png" height="400em" /> <img src="./screenshots/11.png" height="400em" /> 
+<img src="./screenshots/12.png" height="400em" /> 
 
 ## 👍 Contribution
 1. Fork it
