@@ -7,7 +7,7 @@ A cross-platform application based on Github`s API made with Flutter.<br>
 Inspired from [GithubProfileFinder](https://vtrrix.github.io/Github-profile-finder/).
 
 ### APK
-[⬇️ Download apk here](https://github.com/Shreyans13)
+[⬇️ Download apk here](https://github.com/Shreyans13/Github-Profile-Finder/raw/main/release/app-release.apk)
 ## Some Features
 - Search, Analyse, Share your github profile easily
 - Provide Github`s user data based on the username
@@ -45,7 +45,7 @@ Inspired from [GithubProfileFinder](https://vtrrix.github.io/Github-profile-find
 Download or clone this repo by using the link below:
 
 ```
-https://github.com/Shreyans13/github-profile-finder-flutter.git
+https://github.com/Shreyans13/Github-Profile-Finder.git
 ```
 
 **Step 2:**
@@ -87,6 +87,6 @@ This project is uses
 
 
 ## Facing Any Problem or need any Help:grey_question:
-Incase you face any problem or need any help write me in [issues](https://github.com/Shreyans13/github-profile-finder-flutter/issues) section. 
+Incase you face any problem or need any help write me in [issues](https://github.com/Shreyans13/Github-Profile-Finder/issues) section. 
 
 
