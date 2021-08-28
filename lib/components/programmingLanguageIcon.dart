@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:github_profile_finder/util/consts.dart';
 
 Widget programmingLanguageIcon(String icon) {
-  // print(icon);
-  // languageIcon[icon] == null ? getApiOBJ().checkImageExistOrNot == "":  : languageIcon[icon];
-
   return Container(
     width: 20,
     child: Image.network(languageIcon[icon].toString(),

@@ -18,9 +18,8 @@ class UserTabData extends StatelessWidget {
           Container(
             width: 50,
             child: ClipRRect(
-              borderRadius: BorderRadius.all(
-                  Radius.circular(10.0)), //add border radius here
-              child: Image.network(user.avatar), //add image location here
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+              child: Image.network(user.avatar),
             ),
           ),
           SizedBox(
@@ -60,7 +59,6 @@ class UserTabData extends StatelessWidget {
                         KSubtitle(
                           text: user.followers.toString() + " Followers",
                           size: 15,
-                          // overflow: true,
                         ),
                         SizedBox(width: 15),
                       ],
@@ -73,7 +71,6 @@ class UserTabData extends StatelessWidget {
                         KSubtitle(
                           text: user.following.toString() + " Following",
                           size: 15,
-                          // overflow: true,
                         ),
                       ],
                     )

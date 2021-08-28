@@ -15,7 +15,6 @@ class TabViews extends StatefulWidget {
 class _TabViewsState extends State<TabViews> with TickerProviderStateMixin {
   late TabController _tabController;
   int selectedTab = 0;
-  // int currentTab;
   late List<Widget> _tabs;
 
   @override
@@ -54,7 +53,6 @@ class _TabViewsState extends State<TabViews> with TickerProviderStateMixin {
         padding: EdgeInsets.symmetric(horizontal: 10),
         child: Tab(text: "Following"),
       ),
-      // Tab(text: "Events")
     ];
     return Column(
       children: [

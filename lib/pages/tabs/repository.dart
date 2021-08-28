@@ -10,7 +10,6 @@ import 'package:github_profile_finder/util/customText.dart';
 import 'package:github_profile_finder/util/util.dart';
 
 class Repository extends StatelessWidget {
-  // const Repository({Key? key}) : super(key: key);
   final List<String> entries = <String>['A', 'B', 'C', 'D'];
   final List<Color> colorCodes = [
     KDarkBlueColor,
@@ -68,7 +67,6 @@ class RepositoryTab extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     color: colorCodes[index % 3],
                   ),
-                  // height: 150,
                   child: Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
@@ -115,15 +113,3 @@ class RepositoryTab extends StatelessWidget {
             ));
   }
 }
-
-//
-// Container(
-// decoration: BoxDecoration(
-// borderRadius: BorderRadius.circular(5),
-// color: KDarkBlueColor,
-// ),
-// height: 150,
-// width: double.infinity,
-// child: KTitle(text: "Shreyans"),
-// ),
-// SizedBox(height: 20),

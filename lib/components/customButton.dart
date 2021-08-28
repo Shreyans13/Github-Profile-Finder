@@ -41,7 +41,6 @@ class CustomButton extends StatelessWidget {
             Container(
               alignment: Alignment.centerLeft,
               height: 30,
-              // width: 80,
               child: Text(text,
                   style: GoogleFonts.openSans(
                     fontWeight: FontWeight.normal,

@@ -136,12 +136,10 @@ class RowButtons extends StatelessWidget {
         ),
         Visibility(
           visible: true,
-          // widget.controller.currentPage < 3 ? true : false,
           child: GestureDetector(
             onTap: () => {
               if (widget.controller.currentPage == 3)
                 {
-                  // Util.setFirstLoad(),
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => SearchPage()))
                 }

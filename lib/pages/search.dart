@@ -32,13 +32,10 @@ class _SearchPageState extends State<SearchPage> {
     Util.setFirstLoad();
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      // resizeToAvoidBottomInset: false,
-      // resizeToAvoidBottomPadding: false,
       backgroundColor: KDarkGreenColor,
       body: SafeArea(
         child: SingleChildScrollView(
           reverse: true,
-          // scrollDirection: Axis.vertical,
           child: Padding(
             padding: EdgeInsets.only(bottom: _bottom),
             child: Container(
@@ -99,7 +96,6 @@ class _SearchPageState extends State<SearchPage> {
                                   width: double.infinity,
                                   child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
-                                          //     shape: CircleBorder(),
                                           primary: KDarkOrangeColor),
                                       onPressed: () => {
                                             Navigator.of(context).push(

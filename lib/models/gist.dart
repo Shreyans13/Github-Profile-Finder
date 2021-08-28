@@ -10,26 +10,19 @@ class RawData {
       );
 }
 
-// RawData dataFromUrl(String str) => RawData.fromString(str);
-RawData dataFromUrl(String str) {
-  // print("dfurl");
-  // print(str);
-  return RawData.fromString(str);
-}
+RawData dataFromUrl(String str) => RawData.fromString(str);
 
 class GistModel {
   String description;
   String rawUrl;
   String language;
   String name;
-  // RawData raw;
 
   GistModel({
     required this.description,
     required this.rawUrl,
     required this.language,
     required this.name,
-    // required this.raw,
   });
 
   factory GistModel.fromJson(Map<String, dynamic> json) => new GistModel(
@@ -37,14 +30,6 @@ class GistModel {
         name: json["files"].keys.first,
         language: json["files"][json["files"].keys.first]["language"],
         rawUrl: json["files"][json["files"].keys.first]["raw_url"],
-        // raw: getApiOBJ()
-        //     .getRawData(json["files"][json["files"].keys.first]["raw_url"])
-        //     .then((String result) {
-        //   print(result);
-        //   return result;
-        // }),
-
-        // raw: getData(json["files"][json["files"].keys.first]["raw_url"]),
       );
 
   Map<String, dynamic> toJson() => {

@@ -5,8 +5,6 @@ import 'package:github_profile_finder/util/customColors.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 
 class Screen1 extends StatelessWidget {
-  // const Screen1({Key? key}) : super(key: key);
-
   final LiquidController controller;
 
   Screen1({required this.controller});

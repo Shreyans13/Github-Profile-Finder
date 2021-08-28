@@ -18,8 +18,6 @@ class KTitle extends StatelessWidget {
       ),
       maxLines: 2,
       overflow: overflow ? TextOverflow.ellipsis : TextOverflow.visible,
-
-      // overflow: TextOverflow.ellipsis,
     );
   }
 }

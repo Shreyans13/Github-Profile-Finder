@@ -11,12 +11,8 @@ import 'package:github_profile_finder/util/util.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Gist extends StatelessWidget {
-  // const Repository({Key? key}) : super(key: key);
   final List<String> entries = <String>['A', 'B', 'C', 'D'];
   final List<Color> colorCodes = [
-    // KLightBlueColor,
-    // KLightYellowColor,
-    // KLightGreenColor,
     KDarkBlueColor,
     KDarkYellowColor,
     KDarkGreenColor
@@ -75,7 +71,6 @@ class GistTab extends StatelessWidget {
                     ),
                     color: colorCodes[index % 3],
                   ),
-                  // height: 150,
                   child: Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
@@ -88,18 +83,12 @@ class GistTab extends StatelessWidget {
                         KSubtitle(
                           text: gist[index].description,
                           size: 15,
-                          // overflow: true,
                         ),
                         SizedBox(height: 20),
                         Container(
-                          // color: Colors.white,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: Colors.white60,
-                            // border: Border.all(
-                            //   width: 1.3,
-                            //   color: Colors.white60,
-                            // ),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),

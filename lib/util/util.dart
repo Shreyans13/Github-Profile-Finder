@@ -10,7 +10,6 @@ class Util {
 
   static Future init() async {
     _pref = await SharedPreferences.getInstance();
-    // if (Util.getFirstLoad() == true) await _pref!.setBool("firstLoad", true);
   }
 
   static Future setFirstLoad() async =>
@@ -27,10 +26,3 @@ class Util {
 
   static API getApiOBJ() => apiObj;
 }
-
-// API apiObj = API(userName: "Shreyans13");
-// getApiOBJ() => apiObj;
-// ignore: non_constant_identifier_names
-// bool shared_pref = true;
-// getValue() => shared_pref;
-// changeValue() => shared_pref = false;

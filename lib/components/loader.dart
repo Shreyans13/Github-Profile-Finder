@@ -8,7 +8,6 @@ class CircularLoader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        // color: color,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(7),
           color: color,

@@ -58,8 +58,6 @@ class HomePage extends StatelessWidget {
                   padding: const EdgeInsets.all(12.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
-                    // crossAxisAlignment: CrossAxisAlignment.end,
-                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -103,7 +101,6 @@ class HomePage extends StatelessWidget {
                                       text: user.followers.toString() +
                                           " Followers",
                                       size: 15,
-                                      // overflow: true,
                                     ),
                                     SizedBox(width: 15),
                                   ],
@@ -117,7 +114,6 @@ class HomePage extends StatelessWidget {
                                       text: user.following.toString() +
                                           " Following",
                                       size: 15,
-                                      // overflow: true,
                                     ),
                                   ],
                                 )
@@ -132,10 +128,8 @@ class HomePage extends StatelessWidget {
                       Container(
                         width: 100,
                         child: ClipRRect(
-                          borderRadius: BorderRadius.all(
-                              Radius.circular(10.0)), //add border radius here
-                          child: Image.network(
-                              user.avatar), //add image location here
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          child: Image.network(user.avatar),
                         ),
                       ),
                     ],
