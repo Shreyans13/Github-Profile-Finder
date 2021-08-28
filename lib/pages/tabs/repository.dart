@@ -21,7 +21,7 @@ class Repository extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<RepositoryModel>>(
-        future: getUtility().getApiOBJ().getRepository(),
+        future: Util.getApiOBJ().getRepository(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasError) {

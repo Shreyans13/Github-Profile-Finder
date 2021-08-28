@@ -20,7 +20,7 @@ class Following extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<FollowingModel>>(
-        future: getUtility().getApiOBJ().getFollowing(),
+        future: Util.getApiOBJ().getFollowing(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasError) {
@@ -84,7 +84,7 @@ class FollowingTabDataApi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<User>(
-        future: getUtility().getApiOBJ().getUserfromLoginID(userName),
+        future: Util.getApiOBJ().getUserfromLoginID(userName),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasError) {

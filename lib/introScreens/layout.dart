@@ -141,7 +141,7 @@ class RowButtons extends StatelessWidget {
             onTap: () => {
               if (widget.controller.currentPage == 3)
                 {
-                  changeValue(),
+                  // Util.setFirstLoad(),
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => SearchPage()))
                 }

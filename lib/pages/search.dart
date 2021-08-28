@@ -29,6 +29,7 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     final _bottom = MediaQuery.of(context).viewInsets.bottom;
+    Util.setFirstLoad();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       // resizeToAvoidBottomInset: false,
@@ -105,7 +106,7 @@ class _SearchPageState extends State<SearchPage> {
                                                 MaterialPageRoute(
                                                     builder: (context) =>
                                                         Home())),
-                                            getUtility().initiateApi(
+                                            Util.initiateApi(
                                                 _controller.value.text)
                                           },
                                       child: Padding(

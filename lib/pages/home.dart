@@ -23,7 +23,7 @@ class Home extends StatelessWidget {
           backgroundColor: KDarkOrangeColor,
         ),
         body: FutureBuilder<User>(
-            future: getUtility().getApiOBJ().getUser(),
+            future: Util.getApiOBJ().getUser(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
                 if (snapshot.hasError) {

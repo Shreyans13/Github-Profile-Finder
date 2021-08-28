@@ -25,7 +25,7 @@ class Gist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<GistModel>>(
-        future: getUtility().getApiOBJ().getGist(),
+        future: Util.getApiOBJ().getGist(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasError) {
@@ -134,7 +134,7 @@ class CodeBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<RawData>(
-        future: getUtility().getApiOBJ().getRawData(url),
+        future: Util.getApiOBJ().getRawData(url),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasError) {

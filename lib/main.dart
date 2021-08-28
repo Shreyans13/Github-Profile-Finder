@@ -13,6 +13,7 @@ import 'util/customColors.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await FlutterConfig.loadEnvVariables();
+  await Util.init();
   runApp(MyApp());
 }
 
@@ -40,9 +41,9 @@ class _MyHomePageState extends State<MyHomePage> {
   final LiquidController controller = LiquidController();
   pageChangeCallback(int newPage) {
     if (newPage == 3)
-      getUtility().changeSideIcon(false);
+      Util.changeSideIcon(false);
     else
-      getUtility().changeSideIcon(true);
+      Util.changeSideIcon(true);
     switch (newPage) {
       case 0:
         _color = KDarkOrangeColor;
@@ -61,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Icon checkIcon() {
-    if (getUtility().getIcon())
+    if (Util.getIcon())
       return Icon(Icons.arrow_back_ios);
     else
       return Icon(null);
@@ -69,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return getValue()
+    return Util.getFirstLoad() == false
         ? Scaffold(
             backgroundColor: _color,
             body: SafeArea(
