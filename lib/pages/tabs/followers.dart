@@ -51,7 +51,11 @@ class FollowersTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return followers.length == 0
-        ? ErrorPage(errorMessage: "No Followers", btnVisibility: false)
+        ? ErrorPage(
+            errorMessage: "No Followers",
+            btnVisibility: false,
+            imgSrc: "./assets/images/illustrations/empty_list.svg",
+          )
         : Padding(
             padding: const EdgeInsets.all(16.0),
             child: ListView.separated(

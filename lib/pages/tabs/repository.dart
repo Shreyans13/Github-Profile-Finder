@@ -53,7 +53,10 @@ class RepositoryTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return repo.length == 0
         ? ErrorPage(
-            errorMessage: "No Repository created by user", btnVisibility: false)
+            errorMessage: "No Repository created by user",
+            btnVisibility: false,
+            imgSrc: "./assets/images/illustrations/empty_list.svg",
+          )
         : Padding(
             padding: const EdgeInsets.all(16.0),
             child: ListView.separated(

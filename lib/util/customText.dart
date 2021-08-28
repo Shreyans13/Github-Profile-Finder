@@ -8,11 +8,15 @@ class KTitle extends StatelessWidget {
   KTitle({required this.text, this.size = 30});
   @override
   Widget build(BuildContext context) {
-    return Text(text,
-        style: GoogleFonts.raleway(
-          fontWeight: FontWeight.w700,
-          fontSize: size,
-        ));
+    return Text(
+      text,
+      style: GoogleFonts.raleway(
+        fontWeight: FontWeight.w700,
+        fontSize: size,
+      ),
+      maxLines: 2,
+      overflow: TextOverflow.ellipsis,
+    );
   }
 }
 

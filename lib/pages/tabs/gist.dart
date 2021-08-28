@@ -56,7 +56,10 @@ class GistTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return gist.length == 0
         ? ErrorPage(
-            errorMessage: "No Gist created by user", btnVisibility: false)
+            errorMessage: "No Gist created by user",
+            btnVisibility: false,
+            imgSrc: "./assets/images/illustrations/empty_list.svg",
+          )
         : Padding(
             padding: const EdgeInsets.all(16.0),
             child: ListView.separated(
