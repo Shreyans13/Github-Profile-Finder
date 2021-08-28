@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_profile_finder/components/tabView.dart';
+import 'package:github_profile_finder/components/user.dart';
 import 'package:github_profile_finder/models/user.dart';
 import 'package:github_profile_finder/pages/error.dart';
 import 'package:github_profile_finder/pages/search.dart';
@@ -54,52 +55,88 @@ class HomePage extends StatelessWidget {
           : Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  padding: const EdgeInsets.all(12.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    // crossAxisAlignment: CrossAxisAlignment.end,
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      KSubtitle(text: 'Hey, ${user.login}'),
-                      Row(
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Expanded(
-                            flex: 3,
-                            child: KTitle(
-                              text: user.bio,
-                              // size: 20,
-                            ),
+                          KSubtitle(text: 'Hey, ${user.login}'),
+                          user.bio != ""
+                              ? Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.65,
+                                  child: Wrap(children: [
+                                    KTitle(
+                                      text: user.bio,
+                                      overflow: true,
+                                    ),
+                                  ]),
+                                )
+                              : SizedBox(height: 10),
+                          Row(
+                            children: [
+                              FaIcon(FontAwesomeIcons.streetView, size: 20),
+                              SizedBox(width: 10),
+                              KSubtitle(text: user.location),
+                            ],
                           ),
-                          Expanded(
-                            flex: 1,
-                            child: Container(
-                              height: 75,
-                              width: 75,
-                              child: CircleAvatar(
-                                backgroundImage: NetworkImage(user.avatar),
-                              ),
+                          SizedBox(height: user.bio == "" ? 10 : 0),
+                          Container(
+                            width: MediaQuery.of(context).size.width * 0.65,
+                            child: Wrap(
+                              alignment: WrapAlignment.start,
+                              direction: Axis.horizontal,
+                              crossAxisAlignment: WrapCrossAlignment.start,
+                              runAlignment: WrapAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    FaIcon(FontAwesomeIcons.userFriends,
+                                        size: 15),
+                                    SizedBox(width: 10),
+                                    KSubtitle(
+                                      text: user.followers.toString() +
+                                          " Followers",
+                                      size: 15,
+                                      // overflow: true,
+                                    ),
+                                    SizedBox(width: 15),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    FaIcon(FontAwesomeIcons.users, size: 15),
+                                    SizedBox(width: 10),
+                                    KSubtitle(
+                                      text: user.following.toString() +
+                                          " Following",
+                                      size: 15,
+                                      // overflow: true,
+                                    ),
+                                  ],
+                                )
+                              ],
                             ),
                           ),
                         ],
                       ),
-                      Row(
-                        children: [
-                          FaIcon(FontAwesomeIcons.streetView, size: 20),
-                          SizedBox(width: 10),
-                          KSubtitle(text: user.location),
-                        ],
+                      SizedBox(
+                        width: 10,
                       ),
-                      SizedBox(height: 10),
-                      Row(
-                        children: [
-                          FaIcon(FontAwesomeIcons.userFriends, size: 20),
-                          SizedBox(width: 10),
-                          KSubtitle(
-                              text: '${user.followers} Followers', size: 15),
-                          SizedBox(width: 15),
-                          FaIcon(FontAwesomeIcons.users, size: 20),
-                          SizedBox(width: 10),
-                          KSubtitle(
-                              text: '${user.following} Following', size: 15),
-                        ],
+                      Container(
+                        width: 100,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.all(
+                              Radius.circular(10.0)), //add border radius here
+                          child: Image.network(
+                              user.avatar), //add image location here
+                        ),
                       ),
                     ],
                   ),

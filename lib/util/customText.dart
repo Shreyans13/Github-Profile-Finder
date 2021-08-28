@@ -5,7 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 class KTitle extends StatelessWidget {
   final String text;
   double size;
-  KTitle({required this.text, this.size = 30});
+  final bool overflow;
+
+  KTitle({required this.text, this.size = 30, this.overflow = false});
   @override
   Widget build(BuildContext context) {
     return Text(
@@ -15,7 +17,9 @@ class KTitle extends StatelessWidget {
         fontSize: size,
       ),
       maxLines: 2,
-      overflow: TextOverflow.ellipsis,
+      overflow: overflow ? TextOverflow.ellipsis : TextOverflow.visible,
+
+      // overflow: TextOverflow.ellipsis,
     );
   }
 }

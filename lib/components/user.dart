@@ -39,7 +39,7 @@ class UserTabData extends StatelessWidget {
                       child: Wrap(children: [
                         KSubtitle(
                           text: user.bio,
-                          // overflow: true,
+                          overflow: true,
                         ),
                       ]),
                     )

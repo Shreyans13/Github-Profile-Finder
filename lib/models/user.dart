@@ -19,7 +19,7 @@ class User {
 
   factory User.fromJson(Map<String, dynamic> json) => new User(
       login: json["login"] == null ? "" : json["login"],
-      bio: json["bio"] == null ? "Not Found" : json["bio"],
+      bio: json["bio"] == null ? "" : json["bio"],
       avatar: json["avatar_url"] == null ? "" : json["avatar_url"],
       location: json["location"] == null ? "Not Found" : json["location"],
       followers: json["followers"] == null ? 0 : json["followers"],
