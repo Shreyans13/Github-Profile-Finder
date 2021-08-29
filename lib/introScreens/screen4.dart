@@ -12,8 +12,8 @@ class Screen4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenLayout(
-        tittle: "Share",
-        subTittle: "Share your github profile",
+        tittle: "Contribute",
+        subTittle: "Keep contribitng to the open source",
         image: "./assets/images/illustrations/source_code.svg",
         color: KDarkYellowColor,
         controller: controller);
