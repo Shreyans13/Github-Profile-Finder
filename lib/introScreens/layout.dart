@@ -8,7 +8,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_profile_finder/components/customButton.dart';
 import 'package:github_profile_finder/pages/search.dart';
 import 'package:github_profile_finder/util/customText.dart';
-import 'package:github_profile_finder/util/util.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 
 class ScreenLayout extends StatefulWidget {
