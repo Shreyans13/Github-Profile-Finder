@@ -1,6 +1,6 @@
 <p align="center"><img src="./assets/images/gpf.jpg" width=300  align="center"></p>
 <h1 align="center">Github Profile Finder</h1>
-<p align="center"><img align="center" src="https://travis-ci.com/travis-ci/travis-web.svg?branch=master&amp;status=passed" alt="build:passed"></p>
+<p align="center"><img align="center" src="https://api.travis-ci.com/travis-ci/travis-web.svg" alt="build:passed"></p>
 
 ## Getting Started
 A cross-platform application based on Github`s API made with Flutter.<br>
