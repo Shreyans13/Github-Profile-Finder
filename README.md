@@ -3,7 +3,7 @@
 <p align="center"><img align="center" src="https://api.travis-ci.com/travis-ci/travis-web.svg" alt="build:passed"></p>
 
 ## Getting Started
-A cross-platform application based on Github`s API made with Flutter.<br>
+The Flutter-based cross-platform application, inspired by GithubProfileFinder, leverages the power of Github's API to provide users with a seamless and intuitive experience for exploring Github profiles.<br>
 Inspired from [GithubProfileFinder](https://vtrrix.github.io/Github-profile-finder/).
 
 ### APK
