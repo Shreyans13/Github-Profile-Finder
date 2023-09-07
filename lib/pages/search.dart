@@ -98,12 +98,13 @@ class _SearchPageState extends State<SearchPage> {
                                       style: ElevatedButton.styleFrom(
                                           primary: KDarkOrangeColor),
                                       onPressed: () => {
+                                            Util.initiateApi(
+                                                _controller.value.text),
                                             Navigator.of(context).push(
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        Home())),
-                                            Util.initiateApi(
-                                                _controller.value.text)
+                                                        Home()))
+                                            
                                           },
                                       child: Padding(
                                           padding: const EdgeInsets.all(8.0),

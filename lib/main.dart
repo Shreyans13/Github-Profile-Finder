@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_config/flutter_config.dart';
+// import 'package:flutter_config/flutter_config.dart';
+import 'package:github_profile_finder/env/env.g.dart';
 import 'package:github_profile_finder/introScreens/screen1.dart';
 import 'package:github_profile_finder/introScreens/screen2.dart';
 import 'package:github_profile_finder/introScreens/screen3.dart';
@@ -8,12 +9,14 @@ import 'package:github_profile_finder/pages/search.dart';
 import 'package:github_profile_finder/util/util.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 
+// import 'env/env.dart';
 import 'util/customColors.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await FlutterConfig.loadEnvVariables();
+  // await FlutterConfig.loadEnvVariables();
   await Util.init();
+  print(Generated_Env.apiToken);
   runApp(MyApp());
 }
 

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter_config/flutter_config.dart';
+import 'package:github_profile_finder/env/env.g.dart';
 import 'package:github_profile_finder/models/followers.dart';
 import 'package:github_profile_finder/models/following.dart';
 import 'package:github_profile_finder/models/gist.dart';
@@ -15,7 +15,7 @@ class API {
   final String baseUrl = "https://api.github.com";
 
   Map<String, String> headers = {
-    'Authorization': 'Bearer ' + FlutterConfig.get("API_TOKEN")
+    'Authorization': 'Bearer ' + Generated_Env.apiToken
   };
 
   Future<User> getUser() async {
